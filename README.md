@@ -1,4 +1,5 @@
 # Projeto_LPII
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/pvYcmFF/Logo.png" alt="Logo" border="0"></a>
 # GENCOST
 
 ### Bibliotecas Utilizadas
@@ -6,7 +7,7 @@ Bibliotecas utilizadas no projeto até o momento
 | Biblioteca | Link|
 | ------ | ------ |
 | JFoenix | <a href="https://github.com/jfoenixadmin/JFoenix">Github</a> |
-| Scene Builder | <a href="https://github.com/gluonhq/scenebuilder">Github</a> |
+| Scene Builder 11 | <a href="https://github.com/gluonhq/scenebuilder">Github</a> |
 | Mssql jdbc| <a href="https://github.com/microsoft/mssql-jdbc">Github</a>|
 
 # Telas 
