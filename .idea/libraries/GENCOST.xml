@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="GENCOST">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/JavaFXApplication4/dist/GENCOST.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
