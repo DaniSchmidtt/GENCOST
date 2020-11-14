@@ -1,0 +1,35 @@
+Home(Logo apos os graphics em ordem)
+<Icon content="HOME" />
+<Icon content="ACCOUNT_BOX" />
+<Icon content="ACCOUNT_BALANCE" />
+<Icon content="ACCOUNT_BALANCE_WALLET" />
+<Icon content="CLOSE" />
+<Icon content="SEARCH" />
+<Icon content="EXIT_TO_APP" />
+
+Meus Grupos
+<Icon content="HOME" />
+<Icon content="ACCOUNT_BOX" />
+<Icon content="ACCOUNT_BALANCE" />
+<Icon content="ACCOUNT_BALANCE_WALLET" />
+<Icon content="CLOSE" />
+<Icon content="ADD" layoutX="90.0" layoutY="464.0" prefHeight="80.0" prefWidth="99.0" />
+
+Historico
+<Icon content="HOME" />
+<Icon content="ACCOUNT_BOX" />
+<Icon content="ACCOUNT_BALANCE" />
+<Icon content="ACCOUNT_BALANCE_WALLET" />
+<Icon content="CLOSE" />
+<Icon content="SEARCH" />
+<Icon content="CLOSE" /> 
+
+Contas Abertas
+
+<Icon content="HOME" />
+<Icon content="ACCOUNT_BOX" />
+<Icon content="ACCOUNT_BALANCE" />
+<Icon content="ACCOUNT_BALANCE_WALLET" />
+<Icon content="CLOSE" />
+<Icon content="SEARCH" />
+<Icon content="ADD" />

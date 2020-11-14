@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.collections.FXCollections?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #edebf2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gencost.TelaContasAbertasController">
+    <children>
+        <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;">
+            <children>
+                <VBox prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #6747CD; -fx-border-radius: 5; -fx-border-color: black;">
+                    <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0">
+                            <children>
+                                <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="24.0">
+                                    <image>
+                                        <Image url="Images/piggy-bank.png" />
+                                    </image>
+                                </ImageView>
+                                <Label layoutX="34.0" layoutY="150.0" text="GENCOST" textFill="WHITE">
+                                    <font>
+                                        <Font name="Impact" size="36.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </Pane>
+                        <Button onAction="#handleButtonActionHOME" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7a62c4; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Home">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <graphic>
+                        
+                            </graphic>
+                        </Button>
+                        <Button onAction="#handleButtonActionMGP" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7a62c4; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Meus Grupos">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <graphic>
+                        
+                            </graphic>
+                        </Button>
+                        <Button onAction="#handleButtonActionHIST" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7a62c4; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Histórico">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <graphic>
+                        
+                            </graphic>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #5129cf; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Contas Abertas">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <graphic>
+                        
+                            </graphic>
+                        </Button>
+                        <Button onAction="#handleButtonActionSAIR" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #ee6a65; -fx-text-fill: WHITE; -fx-border-color: #a64a46; -fx-border-width: 1; -fx-border-style: solid;" text="SAIR">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <graphic>
+                        
+                            </graphic>
+                            <VBox.margin>
+                                <Insets top="145.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+                <Pane layoutX="200.0" layoutY="-4.0" prefHeight="600.0" prefWidth="698.0" style="-fx-background-color: #e1e0fb;">
+                    <children>
+                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="42.0" layoutX="99.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="500.0" />
+                        <Label layoutX="302.0" layoutY="25.0" text="Contas Abertas">
+                            <font>
+                                <Font name="Ebrima" size="14.0" />
+                            </font>
+                        </Label>
+                        <TableView layoutX="11.0" layoutY="169.0" prefHeight="289.0" prefWidth="676.0" fx:id="table">
+                            <columns>
+                                <TableColumn fx:id="dataM" prefWidth="201.0" text="Data de Máxima de Pagamento" />
+                                <TableColumn fx:id="grupo" minWidth="0.0" prefWidth="120.00003051757812" text="Grupo " />
+                                <TableColumn fx:id="valor" prefWidth="139.0" text="Valor" />
+                                <TableColumn fx:id="forma" prefWidth="217.0" text="Forma de pagamento aceita" />
+                            </columns>
+                        </TableView>
+                        <TextField accessibleText="Buscar usuário" layoutX="150.0" layoutY="90.0" prefHeight="34.0" prefWidth="374.0" style="-fx-border-color: #6a65ee; -fx-border-radius: 30;" />
+                        <Button layoutX="533.0" layoutY="95.0" mnemonicParsing="false" text="Pesquisar">
+                            <graphic>
+                        
+                            </graphic>
+                        </Button>
+                        <Button onAction="#handleButtonActionADD" layoutX="249.0" layoutY="494.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #50be54; -fx-text-fill: WHITE; -fx-border-color: #50be54; -fx-border-width: 1; -fx-border-style: solid;" text="Adicionar Conta">
+                            <font>
+                                <Font name="System Bold" size="14.0" />
+                            </font>
+                            <graphic>
+                        
+                            </graphic>
+                        </Button>
+                    </children>
+                </Pane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

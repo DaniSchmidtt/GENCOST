@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #edebf2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gencost.MeusGruposController">
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;">
+         <children>
+            <VBox prefHeight="600.0" prefWidth="200.0" style="-fx-background-color: #6747CD; -fx-border-radius: 5; -fx-border-color: black;">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="150.0" layoutX="24.0">
+                           <image>
+                              <Image url="Images/piggy-bank.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="34.0" layoutY="150.0" text="GENCOST" textFill="WHITE">
+                           <font>
+                              <Font name="Impact" size="36.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Button onAction="#handleButtonActionHOME" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7a62c4; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Home">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        
+                     </graphic>
+                  </Button>
+                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #5129cf; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Meus Grupos">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        
+                     </graphic>
+                  </Button>
+                  <Button onAction="#handleButtonActionHIST" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7a62c4; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Histórico">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        
+                     </graphic>
+                  </Button>
+                  <Button onAction="#handleButtonActionCTA" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7a62c4; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Contas Abertas">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        
+                     </graphic>
+                  </Button>
+                  <Button onAction="#handleButtonActionSAIR" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #ee6a65; -fx-text-fill: WHITE; -fx-border-color: #a64a46; -fx-border-width: 1; -fx-border-style: solid;" text="SAIR">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        
+                     </graphic>
+                     <VBox.margin>
+                        <Insets top="145.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <Pane layoutX="200.0" layoutY="-4.0" prefHeight="600.0" prefWidth="698.0" style="-fx-background-color: #e1e0fb;">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="42.0" layoutX="87.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="500.0" />
+                  <Label layoutX="308.0" layoutY="25.0" text="Meus Grupos">
+                     <font>
+                        <Font name="Ebrima" size="14.0" />
+                     </font>
+                  </Label>
+                  <Circle fill="#24289c4a" layoutX="146.0" layoutY="166.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="#24289c4a" layoutX="337.0" layoutY="300.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Circle fill="#24289c4a" layoutX="501.0" layoutY="166.0" radius="59.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Button onAction="#handleButtonActionCHU" layoutX="108.0" layoutY="234.0" text="Condomínio">
+                     <font>
+                        <Font name="Ebrima" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="314.0" layoutY="368.0" text="Viagem">
+                     <font>
+                        <Font name="Ebrima" size="14.0" />
+                     </font>
+                 </Button>
+                  <Button layoutX="470.0" layoutY="234.0" text="Churrasco">
+                     <font>
+                        <Font name="Ebrima" size="14.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="461.0" layoutY="126.0">
+                     <image>
+                        <Image url="Images/colaboracao.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="297.0" layoutY="260.0">
+                     <image>
+                        <Image url="Images/summer.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="106.0" layoutY="126.0">
+                     <image>
+                        <Image url="Images/leader.png" />
+                     </image>
+                  </ImageView>
+                  <Circle fill="#50be54" layoutX="139.0" layoutY="504.0" radius="75.0" stroke="BLACK" strokeType="INSIDE" />
+                  
+                  <Button onAction="#handleButtonActionADD" layoutX="226.0" layoutY="488.0" text="ADICIONAR NOVO GRUPO">
+                     <font>
+                        <Font name="Ebrima Bold" size="24.0" />
+                     </font>
+                  </Button>
+                  <Circle fill="#6747cd" layoutX="109.0" layoutY="123.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label layoutX="102.0" layoutY="115.0" text="34">
+                     <font>
+                        <Font name="Impact" size="14.0" />
+                     </font>
+                  </Label>
+                  <Circle fill="#6747cd" layoutX="553.0" layoutY="122.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label layoutX="547.0" layoutY="115.0" text="16">
+                     <font>
+                        <Font name="Impact" size="14.0" />
+                     </font>
+                  </Label>
+                  <Circle fill="#6747cd" layoutX="337.0" layoutY="242.0" radius="16.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Label layoutX="333.0" layoutY="233.0" text="9">
+                     <font>
+                        <Font name="Impact" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
