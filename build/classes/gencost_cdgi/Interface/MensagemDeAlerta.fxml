@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gencost_cdgi.Interface.Controlers.MensagemDeAlertaController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="208.0" style="-fx-background-color: #6a65ee;" />
+      <ImageView fitHeight="200.0" fitWidth="200.0">
+         <image>
+            <Image url="gencost_cdgi/Interface/Images/warning.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="335.0" layoutY="6.0" text="ATENÇÃO">
+         <font>
+            <Font name="Impact" size="36.0" />
+         </font>
+      </Label>
+      <Label  layoutX="300.0" layoutY="80.0" text=" " fx:id="lblMsg">
+         <font>
+            <Font name="Ebrima" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="249.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #a5ee65; -fx-border-color: #7de620; -fx-border-radius: 5;" text="OK" onAction="#handleButtonAction"/>
+      <Button layoutX="440.0" layoutY="154.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="150.0" style="-fx-background-color: #ee6a65; -fx-border-color: #e62720; -fx-border-radius: 5;" text="CANCELAR" onAction="#handleButtonAction"/>
+   </children>
+</Pane>
