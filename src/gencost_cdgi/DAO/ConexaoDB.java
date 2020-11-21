@@ -17,9 +17,9 @@ import java.sql.Statement;
  */
 public class ConexaoDB {
 
-    String usuario = "ed";
-    String senha = "1empresa*";
-    String url = "jdbc:sqlserver://srvgen.database.windows.net;databaseName=gencost"
+    String usuario = "admiro";
+    String senha = "1toledo*";
+    String url = "jdbc:sqlserver://gencostserver.database.windows.net;databaseName=gencost"
             + ";user=" + usuario + ";password=" + senha + ";";
 
     public Connection conecta() {
