@@ -23,6 +23,7 @@ import gencost_cdgi.Interface.Stance.TelaEditarPerfilStance;
 import gencost_cdgi.Interface.Stance.TelaHistoricoStance;
 import gencost_cdgi.Interface.Stance.TelaLoginStance;
 import gencost_cdgi.Interface.Thread.ThreaDa;
+import javafx.scene.control.Label;
 
 /**
  * FXML Controller class
@@ -34,11 +35,15 @@ public class DashboardHomeV2Controller implements Initializable {
     /**
      * Initializes the controller class.
      */
-  
+    @FXML
+    Label lblNome;
+    @FXML
+    Label lblemail;
+
     @FXML
     private void handleButtonActionMGP(ActionEvent event) throws IOException, InterruptedException {
         Parent root;
-        
+
         try {
             root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/MeusGrupos.fxml"));
 
@@ -122,7 +127,12 @@ public class DashboardHomeV2Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
+        DashboardHomeV2Stance homeS = null;
+        homeS = homeS.getInstance();
+        String email = homeS.email;
+        String nome = homeS.nickname;
+        lblNome.setText(nome);
+        lblemail.setText(email);
     }
 
 }

@@ -17,9 +17,9 @@ import java.sql.Statement;
  */
 public class ConexaoDB {
 
-    String usuario = "admiro";
-    String senha = "1toledo*";
-    String url = "jdbc:sqlserver://gencostserver.database.windows.net;databaseName=gencost"
+    String usuario = "ed";
+    String senha = "1empresa*";
+    String url = "jdbc:sqlserver://srvgen.database.windows.net;databaseName=gencost"
             + ";user=" + usuario + ";password=" + senha + ";";
 
     public Connection conecta() {
@@ -59,6 +59,21 @@ public class ConexaoDB {
             ResultSet resultSet = null;
             Statement statement = conecta().createStatement();
             String insertSql = "insert into tbUsuario (Nickname, Senha, Email) values ( '" +Nome+"', '" +Senha+ "', '"+Email + "')";
+            resultSet = statement.executeQuery(insertSql);
+            conecta().close();
+            return resultSet;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        conecta().close();
+        return null;
+    }
+        public ResultSet updateUsuario (String Email, String Senha, String Nome) throws SQLException {
+        try {
+            ResultSet resultSet = null;
+            Statement statement = conecta().createStatement();
+            String insertSql = "update tbUsuario (Nickname, Senha, Email) values ( '" +Nome+"', '" +Senha+ "', '"+Email + "')";
             resultSet = statement.executeQuery(insertSql);
             conecta().close();
             return resultSet;

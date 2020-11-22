@@ -35,15 +35,17 @@ public class TelaLoginController {
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException, InterruptedException {
         Business usrvalida = new Business();
-        if (usrvalida.validaUser(txtEmail.getText(),txtPassword.getText())) {
+        String email = txtEmail.getText();
+        if (usrvalida.validaUser(email, txtPassword.getText())) {
             Parent root;
             try {
-                root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/DashboardHomeV2.fxml"));
-
                 Scene home = new Scene(root);
                 DashboardHomeV2Stance homeS = null;
                 homeS = homeS.getInstance();
+                homeS.email = email;
+                root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/DashboardHomeV2.fxml"));
                 homeS.stage.setScene(home);
+                homeS.email = email;
                 homeS.stage.show();
             } catch (IOException ex) {
                 Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);

@@ -13,7 +13,9 @@ import javafx.stage.Stage;
  */
 public class DashboardHomeV2Stance {
          private static DashboardHomeV2Stance instancia;
-    public Stage stage = new Stage();
+    public Stage stage = new Stage();    
+    public String email;    
+    public String nickname;
 
     private DashboardHomeV2Stance() {
     }

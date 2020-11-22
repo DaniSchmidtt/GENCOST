@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns:fx="http://javafx.com/fxml/1" xmlns:fx="http://javafx.com/fxml/1" xmlns:fx="http://javafx.com/fxml/1" xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #edebf2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gencost_cdgi.Interface.Controlers.TelaHistoricoController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #edebf2;" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="gencost_cdgi.Interface.Controlers.TelaHistoricoController">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;">
          <children>
