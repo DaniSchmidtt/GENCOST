@@ -12,8 +12,8 @@ import gencost_cdgi.Interface.Stance.TelaContasAbertasStance;
 import gencost_cdgi.Interface.Stance.TelaHistoricoStance;
 import gencost_cdgi.Interface.Stance.TelaLoginStance;
 import gencost_cdgi.Interface.Thread.ThreaDa;
-import gencost_cdgi.Views.ContasHist;
-import gencost_cdgi.Views.ContasPagar;
+import gencost_cdgi.Views.ContasHistTable;
+import gencost_cdgi.Views.ContasPagarTable;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -40,15 +40,15 @@ public class TelaContasAbertasController implements Initializable {
 
     //** Initializes the controller class.
     @FXML
-    public TableView<ContasPagar> tableContas;
+    public TableView<ContasPagarTable> tableContas;
     @FXML
-    public TableColumn<ContasPagar, String> dataMcol;
+    public TableColumn<ContasPagarTable, String> dataMcol;
     @FXML
-    public TableColumn<ContasPagar, String> grupocol;
+    public TableColumn<ContasPagarTable, String> grupocol;
     @FXML
-    public TableColumn<ContasPagar, String> valorcol;
+    public TableColumn<ContasPagarTable, String> valorcol;
     @FXML
-    public TableColumn<ContasPagar, String> formacol;
+    public TableColumn<ContasPagarTable, String> formacol;
 
     @FXML
     private void handleButtonActionHOME(ActionEvent event) throws IOException, InterruptedException {
@@ -143,11 +143,10 @@ public class TelaContasAbertasController implements Initializable {
         
         tableContas.setItems(listaContasPagar());
     }
-    private ObservableList<ContasPagar> listaContasPagar() {
+    private ObservableList<ContasPagarTable> listaContasPagar() {
         
-        return FXCollections.observableArrayList(
-                new ContasPagar("10-06-20", "Condominio", "95,90", "a VISTA"),
-                new ContasPagar("19-06-20", "Condominio", "69", "a VISTA")
+        return FXCollections.observableArrayList(new ContasPagarTable("10-06-20", "Condominio", "95,90", "a VISTA"),
+                new ContasPagarTable("19-06-20", "Condominio", "69", "a VISTA")
         );
     }
 

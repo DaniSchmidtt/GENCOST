@@ -46,40 +46,56 @@ public class ConexaoDB {
             resultSet = statement.executeQuery(selectSql);
             conecta().close();
             return resultSet;
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         conecta().close();
         return null;
     }
-    
-    public ResultSet setUsuario (String Email, String Senha, String Nome) throws SQLException {
+
+    public ResultSet setUsuario(String Email, String Senha, String Nome) throws SQLException {
         try {
             ResultSet resultSet = null;
             Statement statement = conecta().createStatement();
-            String insertSql = "insert into tbUsuario (Nickname, Senha, Email) values ( '" +Nome+"', '" +Senha+ "', '"+Email + "')";
+            String insertSql = "insert into tbUsuario (Nickname, Senha, Email) values ( '" + Nome + "', '" + Senha + "', '" + Email + "')";
             resultSet = statement.executeQuery(insertSql);
             conecta().close();
             return resultSet;
-        }
-        catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         conecta().close();
         return null;
     }
-        public void updateUsuario (int id,String Email, String Senha, String Nome) throws SQLException {
+
+    public void updateUsuario(int id, String Email, String Senha, String Nome) throws SQLException {
         try {
-            
+
             Statement statement = conecta().createStatement();
-            String updateSql = "update tbUsuario set Nickname = '" +Nome+"', Senha = '" +Senha+ "', Email ='"+Email + "' where ID = "+id;
+            String updateSql = "update tbUsuario set Nickname = '" + Nome + "', Senha = '" + Senha + "', Email ='" + Email + "' where ID = " + id;
             statement.executeQuery(updateSql);
-           
-        }
-        catch (SQLException e) {
+
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         conecta().close();
     }
+
+    public ResultSet setContasPagar() throws SQLException {
+        try {
+            ResultSet resultSet = null;
+            Statement statement = conecta().createStatement();
+            String selectSql = "SELECT *  FROM tb";
+            resultSet = statement.executeQuery(selectSql);
+            conecta().close();
+            return resultSet;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        conecta().close();
+        return null;
+
+    }
+
 }

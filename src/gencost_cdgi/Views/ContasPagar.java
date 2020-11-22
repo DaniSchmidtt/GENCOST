@@ -13,63 +13,75 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class ContasPagar {
 
-    private final SimpleStringProperty datamax;
-    private final SimpleStringProperty grupo;
-    private final SimpleStringProperty valor;
-    private final SimpleStringProperty formapg;
-
-    public ContasPagar(String datamax, String grupo, String valor, String formapg) {
-        this.datamax = new SimpleStringProperty(datamax);
-        this.grupo = new SimpleStringProperty(grupo);
-        this.valor = new SimpleStringProperty(valor);
-        this.formapg = new SimpleStringProperty(formapg);
-    }
-
+    /**
+     * @return the datamax
+     */
     public String getDatamax() {
-        return datamax.get();
-    }
-
-    public SimpleStringProperty datamaxProperty() {
         return datamax;
     }
 
+    /**
+     * @param datamax the datamax to set
+     */
     public void setDatamax(String datamax) {
-        this.datamax.set(datamax);
+        this.datamax = datamax;
     }
 
+    /**
+     * @return the grupo
+     */
     public String getGrupo() {
-        return grupo.get();
-    }
-
-    public SimpleStringProperty grupoProperty() {
         return grupo;
     }
 
+    /**
+     * @param grupo the grupo to set
+     */
     public void setGrupo(String grupo) {
-        this.grupo.set(grupo);
+        this.grupo = grupo;
     }
 
+    /**
+     * @return the valor
+     */
     public String getValor() {
-        return valor.get();
-    }
-
-    public SimpleStringProperty valorProperty() {
         return valor;
     }
 
+    /**
+     * @param valor the valor to set
+     */
     public void setValor(String valor) {
-        this.valor.set(valor);
+        this.valor = valor;
     }
 
+    /**
+     * @return the formapg
+     */
     public String getFormapg() {
-        return formapg.get();
-    }
-
-    public SimpleStringProperty formapgProperty() {
         return formapg;
     }
 
+    /**
+     * @param formapg the formapg to set
+     */
     public void setFormapg(String formapg) {
-        this.formapg.set(formapg);
+        this.formapg = formapg;
+    }
+    
+    public static synchronized ContasPagar getInstance() {
+        if (instancia == null) {
+            instancia = new ContasPagar();
+        }
+        return instancia;
+    }
+    
+    private String datamax;
+    private String grupo;
+    private String valor;
+    private String formapg;
+    private static ContasPagar instancia;
+    private ContasPagar(){
+        
     }
 }

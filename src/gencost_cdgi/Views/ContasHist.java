@@ -13,169 +13,76 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class ContasHist {
 
-
-    
     /**
-     * @return the id
+     * @return the datapg
      */
-    /*
-    public int getId() {
-        return id;
+    public String getDatapg() {
+        return datapg;
     }
 
     /**
-     * @param id the id to set
+     * @param datapg the datapg to set
      */
-    /*
-    public void setId(int id) {
-        this.id = id;
+    public void setDatapg(String datapg) {
+        this.datapg = datapg;
     }
 
     /**
-     * @return the datapagamento
+     * @return the gp
      */
-    /*
-    public String getDatapagamento() {
-        return datapagamento;
+    public String getGp() {
+        return gp;
     }
 
     /**
-     * @param datapagamento the datapagamento to set
+     * @param gp the gp to set
      */
-    /*
-    public void setDatapagamento(String datapagamento) {
-        this.datapagamento = datapagamento;
+    public void setGp(String gp) {
+        this.gp = gp;
     }
 
     /**
-     * @return the grupo
+     * @return the vlrpg
      */
-    /*
-    public String getGrupo() {
-        return grupo;
+    public String getVlrpg() {
+        return vlrpg;
     }
 
-    
     /**
-     * @param grupo the grupo to set
+     * @param vlrpg the vlrpg to set
      */
-    /*
-    public void setGrupo(String grupo) {
-        this.grupo = grupo;
+    public void setVlrpg(String vlrpg) {
+        this.vlrpg = vlrpg;
     }
 
-    
     /**
-     * @return the valorpago
+     * @return the formapg
      */
-    /*
-    public String getValorpago() {
-        return valorpago;
+    public String getFormapg() {
+        return formapg;
     }
 
-    
-    
     /**
-     * @param valorpago the valorpago to set
+     * @param formapg the formapg to set
      */
-    /*
-    public void setValorpago(String valorpago) {
-        this.valorpago = valorpago;
+    public void setFormapg(String formapg) {
+        this.formapg = formapg;
     }
     
-    /**
-     * @return the formapagamento
-     */
-    /*
-    public String getFormapagamento() {
-        return formapagamento;
-    }
-
-    /**
-     * @param formapagamento the formapagamento to set
-     */
-    /*
-    public void setFormapagamento(String formapagamento) {
-        this.formapagamento = formapagamento;
-    }
-    
-     public static synchronized Contas getInstance() {
+    public static synchronized ContasHist getInstance() {
         if (instancia == null) {
-            instancia = new Contas();
+            instancia = new ContasHist();
         }
         return instancia;
     }
     
-    private int id;
-    private String datapagamento;
-    private String grupo;
-    private String valorpago;
-    private String formapagamento;
-    private static Contas instancia;
-     */
-   
-    /*private Contas(){
+    private String datapg;
+    private String gp;
+    private String vlrpg;
+    private String formapg;
+    private static ContasHist instancia;
+    private ContasHist(){
         
-    } */
-    
-    private final SimpleStringProperty datapg;
-    private final SimpleStringProperty gp;
-    private final SimpleStringProperty vlrpg;
-    private final SimpleStringProperty formapg;
-    
-    public ContasHist(String datapg, String gp, String vlrpg, String formapg){
-        this.datapg = new SimpleStringProperty(datapg);
-        this.gp = new SimpleStringProperty(gp);
-        this.vlrpg = new SimpleStringProperty(vlrpg);
-        this.formapg = new SimpleStringProperty(formapg);
-    }
-    
-    public String getDatapg() {
-        return datapg.get();
     }
 
-    public SimpleStringProperty datapgProperty() {
-        return datapg;
-    }
-
-    public void setDatapg(String datapg) {
-        this.datapg.set(datapg);
-    }
-    
-    public String getGp() {
-        return gp.get();
-    }
-
-    public SimpleStringProperty gpProperty() {
-        return gp;
-    }
-
-    public void setGp(String gp) {
-        this.gp.set(gp);
-    }
-    
-    public String getVlrpg() {
-        return vlrpg.get();
-    }
-
-    public SimpleStringProperty vlrpgProperty() {
-        return vlrpg;
-    }
-
-    public void setVlrpg(String vlrpg) {
-        this.vlrpg.set(vlrpg);
-    }
-    
-    public String getFormapg() {
-        return formapg.get();
-    }
-
-    public SimpleStringProperty formapgProperty() {
-        return formapg;
-    }
-
-    public void setFormapg(String formapg) {
-        this.formapg.set(formapg);
-    }
-    
 }

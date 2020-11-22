@@ -11,7 +11,7 @@ import gencost_cdgi.Interface.Stance.TelaContasAbertasStance;
 import gencost_cdgi.Interface.Stance.TelaHistoricoStance;
 import gencost_cdgi.Interface.Stance.TelaLoginStance;
 import gencost_cdgi.Interface.Thread.ThreaDa;
-import gencost_cdgi.Views.ContasHist;
+import gencost_cdgi.Views.ContasHistTable;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -40,19 +40,19 @@ public class TelaHistoricoController implements Initializable {
      * Initializes the controller class.
      */
     @FXML
-    private TableView<ContasHist> tablehistorico;
+    private TableView<ContasHistTable> tablehistorico;
 
     @FXML
-    private TableColumn<ContasHist, String> datapagcol;
+    private TableColumn<ContasHistTable, String> datapagcol;
 
     @FXML
-    private TableColumn<ContasHist, String> grpcol;
+    private TableColumn<ContasHistTable, String> grpcol;
 
     @FXML
-    private TableColumn<ContasHist, String> vlrpgcol;
+    private TableColumn<ContasHistTable, String> vlrpgcol;
 
     @FXML
-    private TableColumn<ContasHist, String> formapgcol;
+    private TableColumn<ContasHistTable, String> formapgcol;
 
     @FXML
     private void handleButtonActionHOME(ActionEvent event) throws IOException, InterruptedException {
@@ -139,10 +139,10 @@ public class TelaHistoricoController implements Initializable {
         tablehistorico.setItems(listahistContas());
     }
 
-    private ObservableList<ContasHist> listahistContas() {
+    private ObservableList<ContasHistTable> listahistContas() {
         
-        return FXCollections.observableArrayList(new ContasHist("10-05-20", "Condominio", "25,90", "a VISTA"),
-                new ContasHist("19-05-20", "Condominio", "29", "a VISTA")
+        return FXCollections.observableArrayList(new ContasHistTable("10-05-20", "Condominio", "25,90", "a VISTA"),
+                new ContasHistTable("19-05-20", "Condominio", "29", "a VISTA")
         );
     }
 
