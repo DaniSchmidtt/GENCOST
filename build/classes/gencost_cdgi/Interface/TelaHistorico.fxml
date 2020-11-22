@@ -90,10 +90,10 @@
                   </Label>
                   <TableView layoutX="11.0" layoutY="169.0" prefHeight="289.0" prefWidth="676.0" fx:id="tablehistorico" >
                     <columns>
-                      <TableColumn prefWidth="149.0" text="Data de Pagamento" fx:id="datapag" />
-                      <TableColumn minWidth="0.0" prefWidth="171.00003051757812" text="Grupo " fx:id="grp" />
-                        <TableColumn prefWidth="139.0" text="Valor Pago" fx:id="vlrpg" />
-                        <TableColumn prefWidth="217.0" text="Forma de pagamento" fx:id="formapg" />
+                      <TableColumn prefWidth="149.0" text="Data de Pagamento" fx:id="datapagcol" />
+                      <TableColumn minWidth="0.0" prefWidth="171.00003051757812" text="Grupo " fx:id="grpcol" />
+                        <TableColumn prefWidth="139.0" text="Valor Pago" fx:id="vlrpgcol" />
+                        <TableColumn prefWidth="217.0" text="Forma de pagamento" fx:id="formapgcol" />
                     </columns>
                   </TableView>
                   <TextField accessibleText="Buscar usuário" layoutX="150.0" layoutY="99.0" prefHeight="34.0" prefWidth="374.0" style="-fx-border-color: #6a65ee; -fx-border-radius: 30;" />

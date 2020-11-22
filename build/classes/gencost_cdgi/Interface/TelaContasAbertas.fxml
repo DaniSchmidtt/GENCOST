@@ -90,12 +90,12 @@
                                 <Font name="Ebrima" size="14.0" />
                             </font>
                         </Label>
-                        <TableView layoutX="11.0" layoutY="169.0" prefHeight="289.0" prefWidth="676.0" fx:id="table">
+                        <TableView layoutX="11.0" layoutY="169.0" prefHeight="289.0" prefWidth="676.0" fx:id="tableContas">
                             <columns>
-                                <TableColumn fx:id="dataM" prefWidth="201.0" text="Data de Máxima de Pagamento" />
-                                <TableColumn fx:id="grupo" minWidth="0.0" prefWidth="120.00003051757812" text="Grupo " />
-                                <TableColumn fx:id="valor" prefWidth="139.0" text="Valor" />
-                                <TableColumn fx:id="forma" prefWidth="217.0" text="Forma de pagamento aceita" />
+                                <TableColumn fx:id="dataMcol" prefWidth="201.0" text="Data de Máxima de Pagamento" />
+                                <TableColumn fx:id="grupocol" minWidth="0.0" prefWidth="120.00003051757812" text="Grupo " />
+                                <TableColumn fx:id="valorcol" prefWidth="139.0" text="Valor" />
+                                <TableColumn fx:id="formacol" prefWidth="217.0" text="Forma de pagamento aceita" />
                             </columns>
                         </TableView>
                         <TextField accessibleText="Buscar usuário" layoutX="150.0" layoutY="90.0" prefHeight="34.0" prefWidth="374.0" style="-fx-border-color: #6a65ee; -fx-border-radius: 30;" />

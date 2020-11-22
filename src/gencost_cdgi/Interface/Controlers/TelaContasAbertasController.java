@@ -12,11 +12,15 @@ import gencost_cdgi.Interface.Stance.TelaContasAbertasStance;
 import gencost_cdgi.Interface.Stance.TelaHistoricoStance;
 import gencost_cdgi.Interface.Stance.TelaLoginStance;
 import gencost_cdgi.Interface.Thread.ThreaDa;
+import gencost_cdgi.Views.ContasHist;
+import gencost_cdgi.Views.ContasPagar;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +29,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -33,20 +38,18 @@ import javafx.scene.control.TableColumn;
  */
 public class TelaContasAbertasController implements Initializable {
 
-    /**
-     * Initializes the controller class.
-     
+    //** Initializes the controller class.
     @FXML
-    public TableView<Tables> table;
+    public TableView<ContasPagar> tableContas;
     @FXML
-    public TableColumn<Tables, String> dataM;
+    public TableColumn<ContasPagar, String> dataMcol;
     @FXML
-    public TableColumn<Tables, String> grupo;
+    public TableColumn<ContasPagar, String> grupocol;
     @FXML
-    public TableColumn<Tables, String> valor;
+    public TableColumn<ContasPagar, String> valorcol;
     @FXML
-    public TableColumn<Tables, String> forma;
-*/
+    public TableColumn<ContasPagar, String> formacol;
+
     @FXML
     private void handleButtonActionHOME(ActionEvent event) throws IOException, InterruptedException {
 
@@ -104,6 +107,7 @@ public class TelaContasAbertasController implements Initializable {
             Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     @FXML
     private void handleButtonActionADD(ActionEvent event) throws IOException, InterruptedException {
         Parent root;
@@ -119,6 +123,7 @@ public class TelaContasAbertasController implements Initializable {
             Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     @FXML
     private void handleButtonActionSAIR(ActionEvent event) throws IOException, InterruptedException {
         TelaLoginStance telaS = null;
@@ -131,36 +136,19 @@ public class TelaContasAbertasController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        /*
-    public TableView table;
-    public TableColumn dataM;
-    public TableColumn grupo;
-    public TableColumn valor;
-    public TableColumn forma;
-         
-        dataM.setCellValueFactory(
-                new PropertyValueFactory<>("dataMc"));
-        grupo.setCellValueFactory(
-                new PropertyValueFactory<>("grupoc"));
-        valor.setCellValueFactory(
-                new PropertyValueFactory<>("valorc"));
-        forma.setCellValueFactory(
-                new PropertyValueFactory<>("formac"));
-
-        tabela.setItems(listaTable());
-         */
+        dataMcol.setCellValueFactory(new PropertyValueFactory<>("datamax"));
+        grupocol.setCellValueFactory(new PropertyValueFactory<>("grupo"));
+        valorcol.setCellValueFactory(new PropertyValueFactory<>("valor"));
+        formacol.setCellValueFactory(new PropertyValueFactory<>("formapg"));
+        
+        tableContas.setItems(listaContasPagar());
     }
-    /*
-    private ObservableList<Tables> listaTable() {
+    private ObservableList<ContasPagar> listaContasPagar() {
+        
         return FXCollections.observableArrayList(
-                new Tables("Antonio", "28", "Rua Alvenaria 22", "2"),
-                new Tables("Bruno", "19", "Rua São Domingos 108", "1"),
-                new Tables("Manoel", "45", "Rua Valentim 05", "2"),
-                new Tables("Cassandra", "33", "Rua Palmeira 234", "3"),
-                new Tables("Roberto", "69", "Rua Jean Nassif 56", "5"),
-                new Tables("Mariana", "16", "Av Rendeiras 78", "4")
+                new ContasPagar("10-06-20", "Condominio", "95,90", "a VISTA"),
+                new ContasPagar("19-06-20", "Condominio", "69", "a VISTA")
         );
+    }
 
-    }/*/
-     
 }

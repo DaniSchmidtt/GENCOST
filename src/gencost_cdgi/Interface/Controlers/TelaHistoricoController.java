@@ -11,11 +11,14 @@ import gencost_cdgi.Interface.Stance.TelaContasAbertasStance;
 import gencost_cdgi.Interface.Stance.TelaHistoricoStance;
 import gencost_cdgi.Interface.Stance.TelaLoginStance;
 import gencost_cdgi.Interface.Thread.ThreaDa;
+import gencost_cdgi.Views.ContasHist;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,6 +27,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -36,21 +40,20 @@ public class TelaHistoricoController implements Initializable {
      * Initializes the controller class.
      */
     @FXML
-    private TableView tablehistorico;
-    
+    private TableView<ContasHist> tablehistorico;
+
     @FXML
-    private TableColumn datapag;
-    
+    private TableColumn<ContasHist, String> datapagcol;
+
     @FXML
-    private TableColumn grp;
-    
+    private TableColumn<ContasHist, String> grpcol;
+
     @FXML
-    private TableColumn vlrpg;
-    
+    private TableColumn<ContasHist, String> vlrpgcol;
+
     @FXML
-    private TableColumn formapg;
-    
-    
+    private TableColumn<ContasHist, String> formapgcol;
+
     @FXML
     private void handleButtonActionHOME(ActionEvent event) throws IOException, InterruptedException {
 
@@ -124,10 +127,23 @@ public class TelaHistoricoController implements Initializable {
         // TODO
 
         
-      
+
+        datapagcol.setCellValueFactory(new PropertyValueFactory<>("datapg"));
+
+        grpcol.setCellValueFactory(new PropertyValueFactory<>("gp"));
+
+        vlrpgcol.setCellValueFactory(new PropertyValueFactory<>("vlrpg"));
+
+        formapgcol.setCellValueFactory(new PropertyValueFactory<>("formapg"));
+        
+        tablehistorico.setItems(listahistContas());
     }
-    
-     
-    
+
+    private ObservableList<ContasHist> listahistContas() {
+        
+        return FXCollections.observableArrayList(new ContasHist("10-05-20", "Condominio", "25,90", "a VISTA"),
+                new ContasHist("19-05-20", "Condominio", "29", "a VISTA")
+        );
+    }
 
 }
