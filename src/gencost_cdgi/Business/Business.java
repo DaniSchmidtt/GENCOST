@@ -7,6 +7,7 @@ package gencost_cdgi.Business;
 
 import gencost_cdgi.DAO.ConexaoDB;
 import gencost_cdgi.Gencost_CDGI;
+import gencost_cdgi.Views.Usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -23,8 +24,18 @@ public class Business {
         try {
 
             ResultSet resultSet = conect.getUsuario();
+            Usuario usuario = null;
+            usuario = usuario.getInstance();
             while (resultSet.next()) {
                 if (resultSet.getString(2).equals(Email) && resultSet.getString(4).equals(Senha)) {
+                    int id = resultSet.getInt(1);
+                    String email = resultSet.getString(2).toString();
+                    String usr = resultSet.getString(3).toString();
+                    String senha = resultSet.getString(4).toString();
+                    usuario.setId(id);
+                    usuario.setEmail(email);
+                    usuario.setNome(usr);
+                    usuario.setSenha(senha);
                     return true;
                 }
             }
@@ -54,7 +65,7 @@ public class Business {
 
     public boolean validaInsertUser(String Email, String Senha, String Nome) {
         ConexaoDB conect = new ConexaoDB();
-                try {
+        try {
 
             ResultSet resultSet = conect.getUsuario();
             while (resultSet.next()) {
@@ -75,38 +86,27 @@ public class Business {
         return false;
     }
 
-    public boolean validaUpdateUser(String Email, String Senha, String Nome) {
+    public void UpdateUser(String Email, String Senha, String Nome) throws SQLException {
+
+        try{
+            
         
         ConexaoDB conect = new ConexaoDB();
-        
+        Usuario usuario = null;
+        usuario = usuario.getInstance();
         if (!Email.equals("")) {
-            try {
-                ResultSet resultSet = conect.setUsuario(Email, Senha, Nome);
-                return true;
-
-            } catch (SQLException ex) {
-                Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            return false;
-        } else if (!Senha.equals("")) {
-            try {
-                ResultSet resultSet = conect.setUsuario(Email, Senha, Nome);
-                return true;
-
-            } catch (SQLException ex) {
-                Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            return false;
-        } else if (!Nome.equals("")) {
-            try {
-                ResultSet resultSet = conect.setUsuario(Email, Senha, Nome);
-                return true;
-
-            } catch (SQLException ex) {
-                Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            return false;
+        usuario.setEmail(Email);
         }
-        return false;
+        if (!Senha.equals("")) {
+            usuario.setNome(Nome);
+        }
+        if (!Nome.equals("")) {
+            usuario.setSenha(Senha);
+        }
+        conect.updateUsuario(usuario.getId(), usuario.getEmail(), usuario.getSenha(), usuario.getNome());
+        
+        }catch(SQLException ex) {
+            Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 }

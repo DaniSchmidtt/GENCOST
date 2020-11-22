@@ -39,13 +39,11 @@ public class TelaLoginController {
         if (usrvalida.validaUser(email, txtPassword.getText())) {
             Parent root;
             try {
-                Scene home = new Scene(root);
                 DashboardHomeV2Stance homeS = null;
                 homeS = homeS.getInstance();
-                homeS.email = email;
                 root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/DashboardHomeV2.fxml"));
+                Scene home = new Scene(root);
                 homeS.stage.setScene(home);
-                homeS.email = email;
                 homeS.stage.show();
             } catch (IOException ex) {
                 Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);

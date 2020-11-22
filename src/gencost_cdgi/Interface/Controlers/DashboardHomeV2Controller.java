@@ -23,6 +23,7 @@ import gencost_cdgi.Interface.Stance.TelaEditarPerfilStance;
 import gencost_cdgi.Interface.Stance.TelaHistoricoStance;
 import gencost_cdgi.Interface.Stance.TelaLoginStance;
 import gencost_cdgi.Interface.Thread.ThreaDa;
+import gencost_cdgi.Views.Usuario;
 import javafx.scene.control.Label;
 
 /**
@@ -102,13 +103,20 @@ public class DashboardHomeV2Controller implements Initializable {
     private void handleButtonActionEDD(ActionEvent event) throws IOException, InterruptedException {
         Parent root;
         try {
+            
             root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/TelaEditarPerfil.fxml"));
-
             Scene edd = new Scene(root);
             TelaEditarPerfilStance eddS = null;
             eddS = eddS.getInstance();
             eddS.stage.setScene(edd);
             eddS.stage.show();
+            Usuario usuario = null;
+            usuario = usuario.getInstance();
+            String usr = usuario.getNome();
+            String email = usuario.getEmail();
+            lblNome.setText(usr);
+            lblemail.setText(email);
+
         } catch (IOException ex) {
             Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -127,11 +135,11 @@ public class DashboardHomeV2Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        DashboardHomeV2Stance homeS = null;
-        homeS = homeS.getInstance();
-        String email = homeS.email;
-        String nome = homeS.nickname;
-        lblNome.setText(nome);
+        Usuario usuario = null;
+        usuario = usuario.getInstance();
+        String usr = usuario.getNome();
+        String email = usuario.getEmail();
+        lblNome.setText(usr);
         lblemail.setText(email);
     }
 

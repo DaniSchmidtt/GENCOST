@@ -69,19 +69,17 @@ public class ConexaoDB {
         conecta().close();
         return null;
     }
-        public ResultSet updateUsuario (String Email, String Senha, String Nome) throws SQLException {
+        public void updateUsuario (int id,String Email, String Senha, String Nome) throws SQLException {
         try {
-            ResultSet resultSet = null;
+            
             Statement statement = conecta().createStatement();
-            String insertSql = "update tbUsuario (Nickname, Senha, Email) values ( '" +Nome+"', '" +Senha+ "', '"+Email + "')";
-            resultSet = statement.executeQuery(insertSql);
-            conecta().close();
-            return resultSet;
+            String updateSql = "update tbUsuario set Nickname = '" +Nome+"', Senha = '" +Senha+ "', Email ='"+Email + "' where ID = "+id;
+            statement.executeQuery(updateSql);
+           
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
         conecta().close();
-        return null;
     }
 }

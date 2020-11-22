@@ -5,6 +5,8 @@
  */
 package gencost_cdgi.Views;
 
+import gencost_cdgi.Interface.Stance.DashboardHomeV2Stance;
+
 /**
  *
  * @author caiod
@@ -19,31 +21,38 @@ public class Usuario {
     }
 
     /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the email
+     */
+    public String getEmail() {
+        return email;
+    }
+
+    /**
+     * @param email the email to set
+     */
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    /**
      * @return the nome
      */
     public String getNome() {
-        return email;
+        return nome;
     }
 
     /**
      * @param nome the nome to set
      */
     public void setNome(String nome) {
-        this.email = nome;
-    }
-
-    /**
-     * @return the nickname
-     */
-    public String getNickname() {
-        return nickname;
-    }
-
-    /**
-     * @param nickname the nickname to set
-     */
-    public void setNickname(String nickname) {
-        this.nickname = nickname;
+        this.nome = nome;
     }
 
     /**
@@ -59,9 +68,25 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+   
+    
+    public static synchronized Usuario getInstance() {
+        if (instancia == null) {
+            instancia = new Usuario();
+        }
+        return instancia;
+    }
+    
+
+   
     private int id;
     private String email;
-    private String nickname;
+    private String nome;
     private String senha;
+    private static Usuario instancia;
+    private Usuario(){
+        
+    }    
     
 }

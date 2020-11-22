@@ -158,6 +158,11 @@
                         <Image url="gencost_cdgi/Interface/Images/leader.png" />
                      </image>
                   </ImageView>
+                  <Label fx:id="lblemail" layoutX="36.0" layoutY="576.0" text="">
+                     <font>
+                        <Font name="Leelawadee UI Bold" size="14.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </children>
@@ -172,7 +177,7 @@
             <Image url="gencost_cdgi/Interface/Images/perfil.png" />
          </image>
       </ImageView>
-      <Label fx:id="lblNome" layoutX="779.0" layoutY="151.0" text="Caio dos Reis">
+      <Label fx:id="lblNome" layoutX="779.0" layoutY="151.0" text="">
          <font>
             <Font name="Leelawadee UI Bold" size="14.0" />
          </font>

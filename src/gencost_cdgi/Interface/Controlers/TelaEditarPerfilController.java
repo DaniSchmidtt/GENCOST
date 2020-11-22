@@ -8,8 +8,10 @@ package gencost_cdgi.Interface.Controlers;
 import gencost_cdgi.Business.Business;
 import gencost_cdgi.Interface.Stance.MensagemDeAlertaStance;
 import gencost_cdgi.Interface.Thread.ThreaDa;
+import gencost_cdgi.Views.Usuario;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -38,9 +40,12 @@ public class TelaEditarPerfilController implements Initializable {
     TextField txtconfsenha;
 
     @FXML
-    private void handleButtonAction(ActionEvent event) throws IOException, InterruptedException {
+    private void handleButtonAction(ActionEvent event) throws IOException, InterruptedException, SQLException {
 
         Business usrvalida = new Business();
+        Usuario usr = null;
+        usr = usr.getInstance();
+        
         if (txtusuario.getText().trim().equals("") && txtemail.getText().trim().equals("")
                 && txtsenhan.getText().trim().equals("") && txtconfsenha.getText().trim().equals("")) {
             ThreaDa thread = new ThreaDa();
@@ -50,6 +55,7 @@ public class TelaEditarPerfilController implements Initializable {
             thread.run();
         } else {
             if (!txtusuario.getText().trim().equals("")) {
+                usrvalida.UpdateUser(usr.getEmail(), usr.getSenha(), txtusuario.getText());
                 ThreaDa thread = new ThreaDa();
                 MensagemDeAlertaStance mensagem = null;
                 mensagem = mensagem.getInstance();
@@ -57,6 +63,7 @@ public class TelaEditarPerfilController implements Initializable {
                 thread.run();
             }
             if (!txtemail.getText().trim().equals("")) {
+                usrvalida.UpdateUser(txtemail.getText(), usr.getSenha(), usr.getNome());
                 ThreaDa thread = new ThreaDa();
                 MensagemDeAlertaStance mensagem = null;
                 mensagem = mensagem.getInstance();
@@ -83,6 +90,7 @@ public class TelaEditarPerfilController implements Initializable {
                     mensagem.mensagem = ("Senhas não são iguais!");
                     thread.run();
                 } else {
+                    usrvalida.UpdateUser(usr.getEmail(), txtsenhan.getText(), usr.getNome());
                     ThreaDa thread = new ThreaDa();
                     MensagemDeAlertaStance mensagem = null;
                     mensagem = mensagem.getInstance();
