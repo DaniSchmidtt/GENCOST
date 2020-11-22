@@ -53,4 +53,20 @@ public class ConexaoDB {
         conecta().close();
         return null;
     }
+    
+    public ResultSet setUsuario (String Email, String Senha, String Nome) throws SQLException {
+        try {
+            ResultSet resultSet = null;
+            Statement statement = conecta().createStatement();
+            String insertSql = "insert into tbUsuario (Nickname, Senha, Email) values ( '" +Nome+"', '" +Senha+ "', '"+Email + "')";
+            resultSet = statement.executeQuery(insertSql);
+            conecta().close();
+            return resultSet;
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+        conecta().close();
+        return null;
+    }
 }

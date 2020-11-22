@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.Icon?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.chart.BarChart?>
 <?import javafx.scene.chart.CategoryAxis?>
@@ -17,7 +16,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #edebf2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gencost_cdgi.Interface.Controlers.DashboardHomeV2Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #edebf2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gencost_cdgi.Interface.Controlers.DashboardHomeV2Controller">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="750.0" style="-fx-background-color: white;">
          <children>
@@ -45,7 +44,7 @@
                         
                      </graphic>
                   </Button>
-                  <Button onAction="#handleButtonActionMGP" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7a62c4; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Meus Grupos">
+                  <Button mnemonicParsing="false" onAction="#handleButtonActionMGP" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7a62c4; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Meus Grupos">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -53,7 +52,7 @@
                         
                      </graphic>
                   </Button>
-                  <Button onAction="#handleButtonActionHIST" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7a62c4; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Histórico">
+                  <Button mnemonicParsing="false" onAction="#handleButtonActionHIST" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7a62c4; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Histórico">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -61,7 +60,7 @@
                         
                      </graphic>
                   </Button>
-                  <Button onAction="#handleButtonActionCTA" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7a62c4; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Contas Abertas">
+                  <Button mnemonicParsing="false" onAction="#handleButtonActionCTA" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #7a62c4; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Contas Abertas">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -69,7 +68,7 @@
                         
                      </graphic>
                   </Button>
-                  <Button onAction="#handleButtonActionSAIR" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #ee6a65; -fx-text-fill: WHITE; -fx-border-color: #a64a46; -fx-border-width: 1; -fx-border-style: solid;" text="SAIR">
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleButtonActionSAIR" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #ee6a65; -fx-text-fill: WHITE; -fx-border-color: #a64a46; -fx-border-width: 1; -fx-border-style: solid;" text="SAIR">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
@@ -163,7 +162,7 @@
             </Pane>
          </children>
       </AnchorPane>
-      <Button onAction="#handleButtonActionEDD" layoutX="750.0" layoutY="561.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: #50BE54; -fx-border-color: #4673a6;" text="Editar Perfil">
+      <Button layoutX="750.0" layoutY="561.0" mnemonicParsing="false" onAction="#handleButtonActionEDD" prefHeight="34.0" prefWidth="150.0" style="-fx-background-color: #50BE54; -fx-border-color: #4673a6;" text="Editar Perfil">
          <graphic>
             
          </graphic>
@@ -173,7 +172,7 @@
             <Image url="gencost_cdgi/Interface/Images/perfil.png" />
          </image>
       </ImageView>
-      <Label layoutX="779.0" layoutY="151.0" text="Caio dos Reis">
+      <Label fx:id="lblNome" layoutX="779.0" layoutY="151.0" text="Caio dos Reis">
          <font>
             <Font name="Leelawadee UI Bold" size="14.0" />
          </font>

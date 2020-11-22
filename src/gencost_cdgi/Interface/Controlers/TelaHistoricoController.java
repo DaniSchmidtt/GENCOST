@@ -22,6 +22,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TableColumn;
 
 /**
  * FXML Controller class
@@ -33,6 +35,22 @@ public class TelaHistoricoController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    @FXML
+    private TableView tablehistorico;
+    
+    @FXML
+    private TableColumn datapag;
+    
+    @FXML
+    private TableColumn grp;
+    
+    @FXML
+    private TableColumn vlrpg;
+    
+    @FXML
+    private TableColumn formapg;
+    
+    
     @FXML
     private void handleButtonActionHOME(ActionEvent event) throws IOException, InterruptedException {
 
@@ -104,6 +122,12 @@ public class TelaHistoricoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+
+        
+      
     }
+    
+     
+    
 
 }

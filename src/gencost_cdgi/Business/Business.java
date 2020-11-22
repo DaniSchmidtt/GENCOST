@@ -50,4 +50,17 @@ public class Business {
         }
         return false;
     }
+    
+    public boolean validaInsertUser (String Email, String Senha, String Nome)
+    {
+        ConexaoDB conect = new ConexaoDB();
+        try {
+            ResultSet resultSet = conect.setUsuario(Email, Senha, Nome);
+            return true;                       
+            
+        }catch (SQLException ex) {
+            Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
 }

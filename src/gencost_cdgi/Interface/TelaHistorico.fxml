@@ -15,7 +15,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #edebf2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gencost_cdgi.Interface.Controlers.TelaHistoricoController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns:fx="http://javafx.com/fxml/1" xmlns:fx="http://javafx.com/fxml/1" xmlns:fx="http://javafx.com/fxml/1" xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #edebf2;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gencost_cdgi.Interface.Controlers.TelaHistoricoController">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;">
          <children>
@@ -88,12 +88,12 @@
                         <Font name="Ebrima" size="14.0" />
                      </font>
                   </Label>
-                  <TableView layoutX="11.0" layoutY="169.0" prefHeight="289.0" prefWidth="676.0">
+                  <TableView layoutX="11.0" layoutY="169.0" prefHeight="289.0" prefWidth="676.0" fx:id="tablehistorico" >
                     <columns>
-                      <TableColumn prefWidth="149.0" text="Data de Pagamento" />
-                      <TableColumn minWidth="0.0" prefWidth="171.00003051757812" text="Grupo " />
-                        <TableColumn prefWidth="139.0" text="Valor Pago" />
-                        <TableColumn prefWidth="217.0" text="Forma de pagamento" />
+                      <TableColumn prefWidth="149.0" text="Data de Pagamento" fx:id="datapag" />
+                      <TableColumn minWidth="0.0" prefWidth="171.00003051757812" text="Grupo " fx:id="grp" />
+                        <TableColumn prefWidth="139.0" text="Valor Pago" fx:id="vlrpg" />
+                        <TableColumn prefWidth="217.0" text="Forma de pagamento" fx:id="formapg" />
                     </columns>
                   </TableView>
                   <TextField accessibleText="Buscar usuário" layoutX="150.0" layoutY="99.0" prefHeight="34.0" prefWidth="374.0" style="-fx-border-color: #6a65ee; -fx-border-radius: 30;" />

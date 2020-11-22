@@ -34,9 +34,11 @@ public class DashboardHomeV2Controller implements Initializable {
     /**
      * Initializes the controller class.
      */
+  
     @FXML
     private void handleButtonActionMGP(ActionEvent event) throws IOException, InterruptedException {
         Parent root;
+        
         try {
             root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/MeusGrupos.fxml"));
 
@@ -120,6 +122,7 @@ public class DashboardHomeV2Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
     }
 
 }

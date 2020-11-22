@@ -39,25 +39,25 @@ public class TelaDeCadastroController implements Initializable {
     @FXML
     private void handleButtonAction(ActionEvent event) throws IOException, InterruptedException {
         Business usrvalida = new Business();
-        if (txtusuario.getText().equals("")) {
+        if (txtusuario.getText().trim().equals("")) {
             ThreaDa thread = new ThreaDa();
             MensagemDeAlertaStance mensagem = null;
             mensagem = mensagem.getInstance();
             mensagem.mensagem = ("Preencha usuario corretamente!");
             thread.run();
-        } else if (txtemail.getText().equals("")) {
+        } else if (txtemail.getText().trim().equals("")) {
             ThreaDa thread = new ThreaDa();
             MensagemDeAlertaStance mensagem = null;
             mensagem = mensagem.getInstance();
             mensagem.mensagem = ("Preencha E-mail corretamente!");
             thread.run();
-        } else if (txtsenha.getText().equals("")) {
+        } else if (txtsenha.getText().trim().equals("")) {
             ThreaDa thread = new ThreaDa();
             MensagemDeAlertaStance mensagem = null;
             mensagem = mensagem.getInstance();
             mensagem.mensagem = ("Preencha senha corretamente!");
             thread.run();
-        } else if (txtconfsenha.getText().equals("")) {
+        } else if (txtconfsenha.getText().trim().equals("")) {
             ThreaDa thread = new ThreaDa();
             MensagemDeAlertaStance mensagem = null;
             mensagem = mensagem.getInstance();
@@ -80,6 +80,7 @@ public class TelaDeCadastroController implements Initializable {
                 ThreaDa thread = new ThreaDa();
                 MensagemDeAlertaStance mensagem = null;
                 mensagem = mensagem.getInstance();
+                usrvalida.validaInsertUser(txtemail.getText(), txtsenha.getText(), txtusuario.getText());
                 mensagem.mensagem = ("Cadastro efetuado!");
                 thread.run();
                 TelaDeCadastroStance TelaDeCadastro = null;
