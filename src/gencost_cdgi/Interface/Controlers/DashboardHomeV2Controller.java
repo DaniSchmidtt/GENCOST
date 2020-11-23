@@ -183,11 +183,12 @@ public class DashboardHomeV2Controller implements Initializable {
                         new PieChart.Data("Plums", 10),
                         new PieChart.Data("Pears", 22),
                         new PieChart.Data("Apples", 30));
-        pieChart = new PieChart(pieChartData);
+        pieChart.setData(pieChartData);
         pieChart.setTitle("Imported Fruits");
         pieChart.setLabelLineLength(10);
         pieChart.setLegendSide(Side.LEFT);
         pieChart.setVisible(true);
+        
 
     }
 
