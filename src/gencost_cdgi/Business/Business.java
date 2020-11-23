@@ -10,6 +10,7 @@ import gencost_cdgi.Gencost_CDGI;
 import gencost_cdgi.Views.Usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -61,6 +62,31 @@ public class Business {
             Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
         }
         return false;
+    }
+
+    public ArrayList<String> pesquisaUser(String Email) {
+        ConexaoDB conect = new ConexaoDB();
+        try {
+
+            ResultSet resultSet = conect.getUsuario();
+            while (resultSet.next()) {
+                if (resultSet.getString(2).equals(Email)) {
+                    String id = Integer.toString(resultSet.getInt(1));
+                    String email = resultSet.getString(2);
+                    String nome = resultSet.getString(3);
+                     ArrayList<String> retorno = new ArrayList<String>();
+                     retorno.add(id);
+                     retorno.add(email);
+                     retorno.add(nome);
+                    return retorno;
+                }
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return new ArrayList<String>() {
+        };
     }
 
     public boolean validaInsertUser(String Email, String Senha, String Nome) {
@@ -119,10 +145,12 @@ public class Business {
         } catch (SQLException ex) {
             Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    public void AdicionarUsrGrupo(int IDusr, int IDgrupo) {
+    }
+
+    public void AdicionarUsrGrupo(int IDusr, int IDgrupo) {
         ConexaoDB conect = new ConexaoDB();
         try {
-            ResultSet resultSet = conect.setGrupoUsuario(IDusr,IDgrupo);
+            ResultSet resultSet = conect.setGrupoUsuario(IDusr, IDgrupo);
         } catch (SQLException ex) {
             Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
         }
