@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package gencost_cdgi.Interface.Controlers;
+
 import gencost_cdgi.Interface.Stance.DashboardHomeV2Stance;
 import gencost_cdgi.Interface.Stance.MeusGruposStance;
 import gencost_cdgi.Interface.Stance.TelaAdicionarGrupoStance;
@@ -12,17 +13,23 @@ import gencost_cdgi.Interface.Stance.TelaDetalhesGrupoStance;
 import gencost_cdgi.Interface.Stance.TelaHistoricoStance;
 import gencost_cdgi.Interface.Stance.TelaLoginStance;
 import gencost_cdgi.Interface.Thread.ThreaDa;
+import gencost_cdgi.Views.GrupoTable;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -34,6 +41,15 @@ public class MeusGruposController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    @FXML
+    private TableView<GrupoTable> tableGrupo;
+
+    @FXML
+    private TableColumn<GrupoTable, String> grupocol;
+
+    @FXML
+    private TableColumn<GrupoTable, String> imagemcol;
+
     @FXML
     private void handleButtonActionHOME(ActionEvent event) throws IOException, InterruptedException {
 
@@ -91,6 +107,7 @@ public class MeusGruposController implements Initializable {
             Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     @FXML
     private void handleButtonActionADD(ActionEvent event) throws IOException, InterruptedException {
         Parent root;
@@ -105,6 +122,7 @@ public class MeusGruposController implements Initializable {
             Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
     @FXML
     private void handleButtonActionCHU(ActionEvent event) throws IOException, InterruptedException {
         Parent root;
@@ -134,6 +152,18 @@ public class MeusGruposController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        grupocol.setCellValueFactory(new PropertyValueFactory<>("grp"));
+
+        imagemcol.setCellValueFactory(new PropertyValueFactory<>("img"));
+        
+        tableGrupo.setItems(listadegrupo());
+    }
+    
+    private ObservableList<GrupoTable> listadegrupo(){
+        return FXCollections.observableArrayList(
+                new GrupoTable ("Condominio","Despesas Gerais do Condominio"),
+                new GrupoTable ("Churrasco","Churraso com a Familia")
+        );
     }
 
 }
