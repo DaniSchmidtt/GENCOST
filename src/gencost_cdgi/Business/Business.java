@@ -113,6 +113,16 @@ public class Business {
         ConexaoDB conect = new ConexaoDB();
         try {
             ResultSet resultSet = conect.setGrupo(Nome, Imagem);
+            Usuario user = null;
+            user = user.getInstance();
+            resultSet = conect.setGrupoUsuario(user.getId());
+        } catch (SQLException ex) {
+            Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }    public void AdicionarUsrGrupo(int IDusr, int IDgrupo) {
+        ConexaoDB conect = new ConexaoDB();
+        try {
+            ResultSet resultSet = conect.setGrupoUsuario(IDusr,IDgrupo);
         } catch (SQLException ex) {
             Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
         }

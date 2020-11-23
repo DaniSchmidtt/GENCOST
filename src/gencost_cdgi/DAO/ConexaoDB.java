@@ -113,5 +113,32 @@ public class ConexaoDB {
         conecta().close();
         return null;
     }
-
+    public ResultSet setGrupoUsuario(int Iduser) throws SQLException {
+        try {
+            ResultSet resultSet = null;
+            Statement statement = conecta().createStatement();
+            String insertSql = "insert into tbUsuarioGrupo values ( " + Iduser + ", (select top 1 ID from tbGrupo order by ID desc))";
+            resultSet = statement.executeQuery(insertSql);
+            conecta().close();
+            return resultSet;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        conecta().close();
+        return null;
+    }
+        public ResultSet setGrupoUsuario(int Iduser, int IdGrupo) throws SQLException {
+        try {
+            ResultSet resultSet = null;
+            Statement statement = conecta().createStatement();
+            String insertSql = "insert into tbUsuarioGrupo values ( " + Iduser + "," + IdGrupo + ")";
+            resultSet = statement.executeQuery(insertSql);
+            conecta().close();
+            return resultSet;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        conecta().close();
+        return null;
+    }
 }
