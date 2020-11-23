@@ -12,7 +12,9 @@ import javafx.stage.Stage;
  * @author caiod
  */
 public class TelaDetalhesGrupoStance {
-                private static TelaDetalhesGrupoStance instancia;
+
+    private static TelaDetalhesGrupoStance instancia;
+    public int grupoId;
     public Stage stage = new Stage();
 
     private TelaDetalhesGrupoStance() {

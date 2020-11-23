@@ -113,6 +113,7 @@ public class ConexaoDB {
         conecta().close();
         return null;
     }
+
     public ResultSet setGrupoUsuario(int Iduser) throws SQLException {
         try {
             ResultSet resultSet = null;
@@ -127,7 +128,8 @@ public class ConexaoDB {
         conecta().close();
         return null;
     }
-        public ResultSet setGrupoUsuario(int Iduser, int IdGrupo) throws SQLException {
+
+    public ResultSet setGrupoUsuario(int Iduser, int IdGrupo) throws SQLException {
         try {
             ResultSet resultSet = null;
             Statement statement = conecta().createStatement();
@@ -141,4 +143,20 @@ public class ConexaoDB {
         conecta().close();
         return null;
     }
+    
+     public ResultSet getGrupos(int idusr) throws SQLException{
+             try {
+            ResultSet resultSet = null;
+            Statement statement = conecta().createStatement();
+            String selectSql = "SELECT ID,NomeGrupo,(SELECT COUNT(*) FROM tbUsuarioGrupo WHERE IDGrupo = ID)"
+                    + " FROM tbGrupo GP INNER JOIN tbUsuarioGrupo UGP ON GP.ID = UGP.IDGrupo WHERE UGP.IDUsuario = " + idusr;
+            resultSet = statement.executeQuery(selectSql);
+            conecta().close();
+            return resultSet;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        conecta().close();
+        return null;
+     }
 }

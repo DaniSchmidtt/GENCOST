@@ -93,8 +93,9 @@
                   </Button>
                   <TableView fx:id="tableGrupo" layoutX="29.0" layoutY="158.0" prefHeight="370.0" prefWidth="640.0">
                     <columns>
-                      <TableColumn prefWidth="280.0" text="Nome do Grupo" fx:id="grupocol" />
-                      <TableColumn minWidth="0.0" prefWidth="360.0" text="Imagem" fx:id="imagemcol"  />
+                      <TableColumn prefWidth="280.0" text="Quantidade de Participantes do Grupo" fx:id="grupocol" />
+                      <TableColumn minWidth="0.0" prefWidth="360.0" text="Nome do Grupo" fx:id="imagemcol"  />
+                      <TableColumn minWidth="0.0" prefWidth="0.1" text="id" fx:id="idcol"  />
                     </columns>
                   </TableView>
                </children>

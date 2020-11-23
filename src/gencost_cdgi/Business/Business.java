@@ -7,10 +7,12 @@ package gencost_cdgi.Business;
 
 import gencost_cdgi.DAO.ConexaoDB;
 import gencost_cdgi.Gencost_CDGI;
+import gencost_cdgi.Views.GrupoTable;
 import gencost_cdgi.Views.Usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -74,10 +76,10 @@ public class Business {
                     String id = Integer.toString(resultSet.getInt(1));
                     String email = resultSet.getString(2);
                     String nome = resultSet.getString(3);
-                     ArrayList<String> retorno = new ArrayList<String>();
-                     retorno.add(id);
-                     retorno.add(email);
-                     retorno.add(nome);
+                    ArrayList<String> retorno = new ArrayList<String>();
+                    retorno.add(id);
+                    retorno.add(email);
+                    retorno.add(nome);
                     return retorno;
                 }
             }
@@ -155,4 +157,21 @@ public class Business {
             Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-}
+
+    public ArrayList<GrupoTable> Selecionagrupos() {
+        ConexaoDB conect = new ConexaoDB();
+        try {
+            Usuario user = null;
+            user = user.getInstance();
+            ArrayList<GrupoTable> retorno = new ArrayList<GrupoTable>();
+            ResultSet resultSet = conect.getGrupos(user.getId());
+            while (resultSet.next()) {
+                retorno.add(new GrupoTable(resultSet.getString(3),resultSet.getString(2),resultSet.getInt(1)) );
+                }
+            return retorno;
+            }catch (SQLException ex) {
+            Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            return null;
+        }
+    }

@@ -3,14 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/JAVA/GENCOST/GENCOST/src/gencost_cdgi/Interface/Controlers/MeusGruposController.java</file>
-            <file>file:/E:/JAVA/GENCOST/GENCOST/src/gencost_cdgi/Views/Usuario.java</file>
-            <file>file:/E:/JAVA/GENCOST/GENCOST/src/gencost_cdgi/Views/DashBoard.java</file>
-            <file>file:/E:/JAVA/GENCOST/GENCOST/src/gencost_cdgi/Interface/Controlers/TelaHistoricoController.java</file>
-            <file>file:/E:/JAVA/GENCOST/GENCOST/src/gencost_cdgi/Interface/MeusGrupos.fxml</file>
-            <file>file:/E:/JAVA/GENCOST/GENCOST/src/gencost_cdgi/DAO/ConexaoDB.java</file>
-            <file>file:/E:/JAVA/GENCOST/GENCOST/src/gencost_cdgi/Views/GrupoTable.java</file>
-            <file>file:/E:/JAVA/GENCOST/GENCOST/src/gencost_cdgi/Views/Grupo.java</file>
+            <file>file:/C:/Users/caiod/OneDrive/Documentos/GitHub/GENCOST/src/gencost_cdgi/Interface/TelaDetalhesGrupo.fxml</file>
+            <file>file:/C:/Users/caiod/OneDrive/Documentos/GitHub/GENCOST/src/gencost_cdgi/Interface/Controlers/MeusGruposController.java</file>
         </group>
     </open-files>
 </project-private>

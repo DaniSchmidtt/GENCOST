@@ -5,6 +5,7 @@
  */
 package gencost_cdgi.Views;
 
+import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.image.ImageView;
 
@@ -14,9 +15,23 @@ import javafx.scene.image.ImageView;
  */
 public class GrupoTable {
 
+    /**
+     * @return the id
+     */
+    public SimpleIntegerProperty getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(SimpleIntegerProperty id) {
+        this.id = id;
+    }
+
     private final SimpleStringProperty grp;
     private final SimpleStringProperty img;
-
+    private SimpleIntegerProperty id;
     public String getGrp() {
         return grp.get();
     }
@@ -41,8 +56,9 @@ public class GrupoTable {
         this.img.set(img);
     }
 
-    public GrupoTable(String grp, String img) {
+    public GrupoTable(String grp, String img, int id) {
         this.grp = new SimpleStringProperty(grp);
         this.img = new SimpleStringProperty(img);
+        this.id = new SimpleIntegerProperty (id);
     }
 }

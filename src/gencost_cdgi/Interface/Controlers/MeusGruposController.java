@@ -5,6 +5,7 @@
  */
 package gencost_cdgi.Interface.Controlers;
 
+import gencost_cdgi.Business.Business;
 import gencost_cdgi.Interface.Stance.DashboardHomeV2Stance;
 import gencost_cdgi.Interface.Stance.MensagemDeAlertaStance;
 import gencost_cdgi.Interface.Stance.MeusGruposStance;
@@ -17,10 +18,13 @@ import gencost_cdgi.Interface.Thread.ThreaDa;
 import gencost_cdgi.Views.GrupoTable;
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
+import static javafx.collections.FXCollections.observableArrayList;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -50,6 +54,8 @@ public class MeusGruposController implements Initializable {
 
     @FXML
     private TableColumn<GrupoTable, String> imagemcol;
+    @FXML
+    private TableColumn<GrupoTable, Integer> idcol;
 
     @FXML
     private void handleButtonActionHOME(ActionEvent event) throws IOException, InterruptedException {
@@ -140,6 +146,8 @@ public class MeusGruposController implements Initializable {
         grupocol.setCellValueFactory(new PropertyValueFactory<>("grp"));
 
         imagemcol.setCellValueFactory(new PropertyValueFactory<>("img"));
+        
+        idcol.setCellValueFactory(new PropertyValueFactory<>("id"));
 
         tableGrupo.setItems(listadegrupo());
 
@@ -151,10 +159,8 @@ public class MeusGruposController implements Initializable {
     }
 
     private ObservableList<GrupoTable> listadegrupo() {
-        return FXCollections.observableArrayList(
-                new GrupoTable("Condominio", "Despesas Gerais do Condominio"),
-                new GrupoTable("Churrasco", "Churraso com a Familia")
-        );
+        Business listagenmgrp = new Business();        
+        return FXCollections.observableArrayList(listagenmgrp.Selecionagrupos());
     }
 
     private void events() {
@@ -162,10 +168,11 @@ public class MeusGruposController implements Initializable {
         } else {
             Parent root;
             try {
+                                TelaDetalhesGrupoStance ctaS = null;
+                ctaS = ctaS.getInstance();
+                ctaS.grupoId = tableGrupo.getSelectionModel().getSelectedItem().getId().getValue();
                 root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/TelaDetalhesGrupo.fxml"));
                 Scene cta = new Scene(root);
-                TelaDetalhesGrupoStance ctaS = null;
-                ctaS = ctaS.getInstance();
                 ctaS.stage.setScene(cta);
                 ctaS.stage.show();
             } catch (IOException ex) {
