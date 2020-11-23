@@ -7,6 +7,7 @@ package gencost_cdgi.Interface.Controlers;
 
 import gencost_cdgi.Interface.Stance.DashboardHomeV2Stance;
 import gencost_cdgi.Interface.Stance.MeusGruposStance;
+import gencost_cdgi.Interface.Stance.TelaAdicionarContaStance;
 import gencost_cdgi.Interface.Stance.TelaContasAbertasStance;
 import gencost_cdgi.Interface.Stance.TelaHistoricoStance;
 import gencost_cdgi.Interface.Stance.TelaLoginStance;
@@ -107,6 +108,22 @@ public class TelaHistoricoController implements Initializable {
             TelaHistoricoStance histS = null;
             histS = histS.getInstance();
             histS.stage.close();
+        } catch (IOException ex) {
+            Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+@FXML
+    private void handleButtonActionADDCON(ActionEvent event) throws IOException, InterruptedException {
+
+                Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/TelaAdicionarConta.fxml"));
+
+            Scene add = new Scene(root);
+            TelaAdicionarContaStance addS = null;
+            addS = addS.getInstance();
+            addS.stage.setScene(add);
+            addS.stage.show();
         } catch (IOException ex) {
             Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);
         }
