@@ -6,6 +6,7 @@
 package gencost_cdgi.Interface.Controlers;
 
 import gencost_cdgi.Interface.Stance.DashboardHomeV2Stance;
+import gencost_cdgi.Interface.Stance.MensagemDeAlertaStance;
 import gencost_cdgi.Interface.Stance.MeusGruposStance;
 import gencost_cdgi.Interface.Stance.TelaAdicionarGrupoStance;
 import gencost_cdgi.Interface.Stance.TelaContasAbertasStance;
@@ -124,22 +125,6 @@ public class MeusGruposController implements Initializable {
     }
 
     @FXML
-    private void handleButtonActionCHU(ActionEvent event) throws IOException, InterruptedException {
-        Parent root;
-        try {
-            root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/TelaDetalhesGrupo.fxml"));
-
-            Scene cta = new Scene(root);
-            TelaDetalhesGrupoStance ctaS = null;
-            ctaS = ctaS.getInstance();
-            ctaS.stage.setScene(cta);
-            ctaS.stage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    @FXML
     private void handleButtonActionSAIR(ActionEvent event) throws IOException, InterruptedException {
         TelaLoginStance telaS = null;
         telaS = telaS.getInstance();
@@ -155,15 +140,38 @@ public class MeusGruposController implements Initializable {
         grupocol.setCellValueFactory(new PropertyValueFactory<>("grp"));
 
         imagemcol.setCellValueFactory(new PropertyValueFactory<>("img"));
-        
+
         tableGrupo.setItems(listadegrupo());
+
+        tableGrupo.setOnMouseClicked(e -> {
+            if (e.getClickCount() == 2) {
+                events();
+            }
+        });
     }
-    
-    private ObservableList<GrupoTable> listadegrupo(){
+
+    private ObservableList<GrupoTable> listadegrupo() {
         return FXCollections.observableArrayList(
-                new GrupoTable ("Condominio","Despesas Gerais do Condominio"),
-                new GrupoTable ("Churrasco","Churraso com a Familia")
+                new GrupoTable("Condominio", "Despesas Gerais do Condominio"),
+                new GrupoTable("Churrasco", "Churraso com a Familia")
         );
+    }
+
+    private void events() {
+        if (tableGrupo.getSelectionModel().getSelectedItem().equals("")) {
+        } else {
+            Parent root;
+            try {
+                root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/TelaDetalhesGrupo.fxml"));
+                Scene cta = new Scene(root);
+                TelaDetalhesGrupoStance ctaS = null;
+                ctaS = ctaS.getInstance();
+                ctaS.stage.setScene(cta);
+                ctaS.stage.show();
+            } catch (IOException ex) {
+                Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
 }
