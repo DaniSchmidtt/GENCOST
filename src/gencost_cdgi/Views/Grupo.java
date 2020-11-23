@@ -59,8 +59,7 @@ public class Grupo {
         }
         return instancia;
     }
-    
-    
+        
     private int id;
     private String nome;
     private String imagem;
