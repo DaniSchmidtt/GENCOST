@@ -171,6 +171,7 @@ public class MeusGruposController implements Initializable {
                                 TelaDetalhesGrupoStance ctaS = null;
                 ctaS = ctaS.getInstance();
                 ctaS.grupoId = tableGrupo.getSelectionModel().getSelectedItem().getId().getValue();
+                ctaS.nomegrupo = tableGrupo.getSelectionModel().getSelectedItem().getImg().toString();
                 root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/TelaDetalhesGrupo.fxml"));
                 Scene cta = new Scene(root);
                 ctaS.stage.setScene(cta);

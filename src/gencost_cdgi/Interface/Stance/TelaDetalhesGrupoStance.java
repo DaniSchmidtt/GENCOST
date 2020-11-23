@@ -15,6 +15,7 @@ public class TelaDetalhesGrupoStance {
 
     private static TelaDetalhesGrupoStance instancia;
     public int grupoId;
+    public String nomegrupo;
     public Stage stage = new Stage();
 
     private TelaDetalhesGrupoStance() {

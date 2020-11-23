@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gencost_cdgi.Interface.Controlers.TelaDetalhesGrupoController">
+<Pane xmlns:fx="http://javafx.com/fxml/1" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" fx:controller="gencost_cdgi.Interface.Controlers.TelaDetalhesGrupoController">
    <children>
       <Label layoutX="95.0" layoutY="20.0" textFill="#7c7a7a">
          <font>
@@ -26,7 +26,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <Label layoutX="94.0" layoutY="20.0" text="Grupo do Condominio" textFill="#7c7a7a">
+      <Label fx:id="lblnomegrupo" layoutX="94.0" layoutY="20.0" text="Grupo" textFill="#7c7a7a">
          <font>
             <Font name="Impact" size="24.0" />
          </font>

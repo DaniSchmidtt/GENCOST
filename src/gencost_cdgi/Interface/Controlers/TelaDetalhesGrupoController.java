@@ -8,7 +8,9 @@ package gencost_cdgi.Interface.Controlers;
 import gencost_cdgi.Business.Business;
 import gencost_cdgi.Interface.Stance.MensagemDeAlertaStance;
 import gencost_cdgi.Interface.Stance.TelaDeCadastroStance;
+import gencost_cdgi.Interface.Stance.TelaDetalhesGrupoStance;
 import gencost_cdgi.Interface.Thread.ThreaDa;
+import gencost_cdgi.Views.Usuario;
 import java.io.IOException;
 import javafx.scene.control.TextField;
 import java.net.URL;
@@ -47,6 +49,8 @@ public class TelaDetalhesGrupoController implements Initializable {
 
     @FXML
     private Label nomeusr;
+    @FXML
+    private Label lblnomegrupo;
 
     @FXML
     private void handleButtonActionPESQ(ActionEvent event) throws IOException, InterruptedException {
@@ -84,12 +88,21 @@ public class TelaDetalhesGrupoController implements Initializable {
 
     @FXML
     private void handleButtonActionSalvar(ActionEvent event) throws IOException, InterruptedException {
+        Usuario usr = null;
+        usr = usr.getInstance();
         if (emailusr.getText().trim().equals("")) {
             ThreaDa thread = new ThreaDa();
             MensagemDeAlertaStance mensagem = null;
             mensagem = mensagem.getInstance();
             mensagem.mensagem = ("Pesquise um usuario valido primeiro");
             thread.run();
+        } else if (emailusr.getText().equals(usr.getEmail())) {
+            ThreaDa thread = new ThreaDa();
+            MensagemDeAlertaStance mensagem = null;
+            mensagem = mensagem.getInstance();
+            mensagem.mensagem = ("Este é o seu e-mail!");
+            thread.run();
+
         } else {
             Business usrvalida = new Business();
             ArrayList<String> valida = usrvalida.pesquisaUser(emailusr.getText());
@@ -105,6 +118,10 @@ public class TelaDetalhesGrupoController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        TelaDetalhesGrupoStance ctaS = null;
+        ctaS = ctaS.getInstance();
+        lblnomegrupo.setText(ctaS.nomegrupo);
+
     }
 
 }
