@@ -108,7 +108,7 @@
                         <Font name="Leelawadee UI Bold" size="14.0" />
                      </font>
                   </Label>
-                  <PieChart layoutX="36.0" layoutY="376.0" prefHeight="212.0" prefWidth="488.0" titleSide="BOTTOM" fx:id="pieChart" />
+                  <PieChart fx:id="pieChart" layoutX="36.0" layoutY="376.0" prefHeight="212.0" prefWidth="488.0" title="PieChart Desp" />
                </children>
             </Pane>
          </children>

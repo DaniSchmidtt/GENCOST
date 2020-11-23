@@ -88,35 +88,31 @@ public class Business {
 
     public void UpdateUser(String Email, String Senha, String Nome) throws SQLException {
 
-        try{
-            
-        
-        ConexaoDB conect = new ConexaoDB();
-        Usuario usuario = null;
-        usuario = usuario.getInstance();
-        if (!Email.equals("")) {
-        usuario.setEmail(Email);
-        }
-        if (!Senha.equals("")) {
-            usuario.setNome(Nome);
-        }
-        if (!Nome.equals("")) {
-            usuario.setSenha(Senha);
-        }
-        conect.updateUsuario(usuario.getId(), usuario.getEmail(), usuario.getSenha(), usuario.getNome());
-        
-        }catch(SQLException ex) {
+        try {
+
+            ConexaoDB conect = new ConexaoDB();
+            Usuario usuario = null;
+            usuario = usuario.getInstance();
+            if (!Email.equals("")) {
+                usuario.setEmail(Email);
+            }
+            if (!Senha.equals("")) {
+                usuario.setNome(Nome);
+            }
+            if (!Nome.equals("")) {
+                usuario.setSenha(Senha);
+            }
+            conect.updateUsuario(usuario.getId(), usuario.getEmail(), usuario.getSenha(), usuario.getNome());
+
+        } catch (SQLException ex) {
             Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-     public void Criargrupo(String Nome, String Imagem){
-         ConexaoDB conect = new ConexaoDB();
-         String Email="";
-         String Senha="";
-            try {
-            ResultSet resultSet = conect.setUsuario(Email, Senha, Nome);
-            
+
+    public void Criargrupo(String Nome, String Imagem) {
+        ConexaoDB conect = new ConexaoDB();
+        try {
+            ResultSet resultSet = conect.setGrupo(Nome, Imagem);
         } catch (SQLException ex) {
             Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
         }

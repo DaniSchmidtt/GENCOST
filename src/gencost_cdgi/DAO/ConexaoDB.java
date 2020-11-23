@@ -80,7 +80,8 @@ public class ConexaoDB {
         }
         conecta().close();
     }
-        //Falta alterar a tabela para colocar a data de pagamento, e criar possivel view para dar selecta nela
+    //Falta alterar a tabela para colocar a data de pagamento, e criar possivel view para dar selecta nela
+
     public ResultSet setContasPagar() throws SQLException {
         try {
             ResultSet resultSet = null;
@@ -96,6 +97,21 @@ public class ConexaoDB {
         conecta().close();
         return null;
 
+    }
+
+    public ResultSet setGrupo(String Nome, String Imagem) throws SQLException {
+        try {
+            ResultSet resultSet = null;
+            Statement statement = conecta().createStatement();
+            String insertSql = "insert into tbGrupo (NomeGrupo, Imagem) values ( '" + Nome + "', '" + Imagem + "')";
+            resultSet = statement.executeQuery(insertSql);
+            conecta().close();
+            return resultSet;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        conecta().close();
+        return null;
     }
 
 }

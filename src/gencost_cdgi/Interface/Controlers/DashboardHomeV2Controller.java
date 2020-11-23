@@ -26,6 +26,7 @@ import gencost_cdgi.Interface.Thread.ThreaDa;
 import gencost_cdgi.Views.Usuario;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.geometry.Side;
 import javafx.scene.control.Label;
 import javafx.scene.chart.Axis;
 import javafx.scene.chart.BarChart;
@@ -33,6 +34,7 @@ import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.chart.*;
 
 /**
  * FXML Controller class
@@ -48,13 +50,12 @@ public class DashboardHomeV2Controller implements Initializable {
     Label lblNome;
     @FXML
     Label lblemail;
-    
+
     @FXML
     public BarChart bc;
-    
+
     @FXML
-    public PieChart pieChart;
-    
+    private PieChart pieChart;
 
     @FXML
     private void handleButtonActionMGP(ActionEvent event) throws IOException, InterruptedException {
@@ -157,15 +158,14 @@ public class DashboardHomeV2Controller implements Initializable {
         lblNome.setText(usr);
         lblemail.setText(email);
 
-        
         XYChart.Series series1 = new XYChart.Series();
-        series1.setName("2003");       
+        series1.setName("2003");
         series1.getData().add(new XYChart.Data(austria, 15));
         series1.getData().add(new XYChart.Data(brazil, 12));
         series1.getData().add(new XYChart.Data(france, 10));
         series1.getData().add(new XYChart.Data(italy, 9));
-        series1.getData().add(new XYChart.Data(usa, 7));      
-        
+        series1.getData().add(new XYChart.Data(usa, 7));
+
         XYChart.Series series2 = new XYChart.Series();
         series2.setName("2004");
         series2.getData().add(new XYChart.Data(austria, 5));
@@ -173,18 +173,21 @@ public class DashboardHomeV2Controller implements Initializable {
         series2.getData().add(new XYChart.Data(france, 4));
         series2.getData().add(new XYChart.Data(italy, 5));
         series2.getData().add(new XYChart.Data(usa, 3));
-        
+
         bc.getData().addAll(series1, series2);
-        
-        
-        ObservableList<PieChart.Data> pieChartData =
-                FXCollections.observableArrayList(
-                new PieChart.Data("Grapefruit", 13),
-                new PieChart.Data("Oranges", 25),
-                new PieChart.Data("Plums", 10),
-                new PieChart.Data("Pears", 22),
-                new PieChart.Data("Apples", 30));
+
+        ObservableList<PieChart.Data> pieChartData
+                = FXCollections.observableArrayList(
+                        new PieChart.Data("Grapefruit", 13),
+                        new PieChart.Data("Oranges", 25),
+                        new PieChart.Data("Plums", 10),
+                        new PieChart.Data("Pears", 22),
+                        new PieChart.Data("Apples", 30));
         pieChart = new PieChart(pieChartData);
+        pieChart.setTitle("Imported Fruits");
+        pieChart.setLabelLineLength(10);
+        pieChart.setLegendSide(Side.LEFT);
+        pieChart.setVisible(true);
 
     }
 
