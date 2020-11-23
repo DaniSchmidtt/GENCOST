@@ -141,7 +141,8 @@ public class TelaHistoricoController implements Initializable {
 
     private ObservableList<ContasHistTable> listahistContas() {
         
-        return FXCollections.observableArrayList(new ContasHistTable("10-05-20", "Condominio", "25,90", "a VISTA"),
+        return FXCollections.observableArrayList(
+                new ContasHistTable("10-05-20", "Condominio", "25,90", "a VISTA"),
                 new ContasHistTable("19-05-20", "Condominio", "29", "a VISTA")
         );
     }

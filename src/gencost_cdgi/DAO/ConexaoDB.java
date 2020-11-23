@@ -80,12 +80,12 @@ public class ConexaoDB {
         }
         conecta().close();
     }
-
+        //Falta alterar a tabela para colocar a data de pagamento, e criar possivel view para dar selecta nela
     public ResultSet setContasPagar() throws SQLException {
         try {
             ResultSet resultSet = null;
             Statement statement = conecta().createStatement();
-            String selectSql = "SELECT *  FROM tb";
+            String selectSql = "SELECT *  FROM tbDespesa";
             resultSet = statement.executeQuery(selectSql);
             conecta().close();
             return resultSet;

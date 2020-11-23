@@ -24,7 +24,15 @@ import gencost_cdgi.Interface.Stance.TelaHistoricoStance;
 import gencost_cdgi.Interface.Stance.TelaLoginStance;
 import gencost_cdgi.Interface.Thread.ThreaDa;
 import gencost_cdgi.Views.Usuario;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.Label;
+import javafx.scene.chart.Axis;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
 
 /**
  * FXML Controller class
@@ -40,6 +48,13 @@ public class DashboardHomeV2Controller implements Initializable {
     Label lblNome;
     @FXML
     Label lblemail;
+    
+    @FXML
+    public BarChart bc;
+    
+    @FXML
+    public PieChart pieChart;
+    
 
     @FXML
     private void handleButtonActionMGP(ActionEvent event) throws IOException, InterruptedException {
@@ -103,7 +118,7 @@ public class DashboardHomeV2Controller implements Initializable {
     private void handleButtonActionEDD(ActionEvent event) throws IOException, InterruptedException {
         Parent root;
         try {
-            
+
             root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/TelaEditarPerfil.fxml"));
             Scene edd = new Scene(root);
             TelaEditarPerfilStance eddS = null;
@@ -141,6 +156,42 @@ public class DashboardHomeV2Controller implements Initializable {
         String email = usuario.getEmail();
         lblNome.setText(usr);
         lblemail.setText(email);
+
+        
+        XYChart.Series series1 = new XYChart.Series();
+        series1.setName("2003");       
+        series1.getData().add(new XYChart.Data(austria, 15));
+        series1.getData().add(new XYChart.Data(brazil, 12));
+        series1.getData().add(new XYChart.Data(france, 10));
+        series1.getData().add(new XYChart.Data(italy, 9));
+        series1.getData().add(new XYChart.Data(usa, 7));      
+        
+        XYChart.Series series2 = new XYChart.Series();
+        series2.setName("2004");
+        series2.getData().add(new XYChart.Data(austria, 5));
+        series2.getData().add(new XYChart.Data(brazil, 7));
+        series2.getData().add(new XYChart.Data(france, 4));
+        series2.getData().add(new XYChart.Data(italy, 5));
+        series2.getData().add(new XYChart.Data(usa, 3));
+        
+        bc.getData().addAll(series1, series2);
+        
+        
+        ObservableList<PieChart.Data> pieChartData =
+                FXCollections.observableArrayList(
+                new PieChart.Data("Grapefruit", 13),
+                new PieChart.Data("Oranges", 25),
+                new PieChart.Data("Plums", 10),
+                new PieChart.Data("Pears", 22),
+                new PieChart.Data("Apples", 30));
+        pieChart = new PieChart(pieChartData);
+
     }
+
+    final static String austria = "Austria";
+    final static String brazil = "Brazil";
+    final static String france = "France";
+    final static String italy = "Italy";
+    final static String usa = "USA";
 
 }

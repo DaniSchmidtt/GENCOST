@@ -109,4 +109,16 @@ public class Business {
             Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+     public void Criargrupo(String Nome, String Imagem){
+         ConexaoDB conect = new ConexaoDB();
+         String Email="";
+         String Senha="";
+            try {
+            ResultSet resultSet = conect.setUsuario(Email, Senha, Nome);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }
