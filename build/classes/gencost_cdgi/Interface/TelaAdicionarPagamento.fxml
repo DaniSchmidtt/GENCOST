@@ -27,7 +27,7 @@
             <Font name="Ebrima Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="35.0" layoutY="367.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #6747CD; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Adicionar Conta">
+      <Button layoutX="35.0" layoutY="367.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #6747CD; -fx-text-fill: WHITE; -fx-border-color: #6747CD; -fx-border-width: 1; -fx-border-style: solid;" text="Adicionar Pagamento">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>

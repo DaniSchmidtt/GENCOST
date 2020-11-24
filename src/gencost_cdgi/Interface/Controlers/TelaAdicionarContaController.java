@@ -57,10 +57,20 @@ public class TelaAdicionarContaController implements Initializable {
     }
     
         private void preecheCombo2(){
-        Grupo gp1 = new Grupo(1,"Toledo");
+        Grupo gp1 = new Grupo(1, "Toledo1");
         grupolist.add(gp1);
-        Grupo gp2 = new Grupo(2,"Ftt");
+        Grupo gp2 = new Grupo(2, "Toledos");
         grupolist.add(gp2);
+        Grupo gp3 = new Grupo(3, "Mercado");
+        grupolist.add(gp3);
+        Grupo gp4 = new Grupo(4, "Contas Mensais");
+        grupolist.add(gp4);
+        Grupo gp5 = new Grupo(5, "Viagem Santos");
+        grupolist.add(gp5);
+        Grupo gp6 = new Grupo(6, "Trabalho");
+        grupolist.add(gp6);
+        Grupo gp7 = new Grupo(7, "TCC");
+        grupolist.add(gp7);
         
         grupoobslist = FXCollections.observableArrayList(grupolist);
         cbSelecionagrp.setItems(grupoobslist);

@@ -29,10 +29,10 @@ public class TelaAdicionarPagamentoControler implements Initializable {
     private ComboBox<Grupo> cbSelecionarGrp;
     @FXML
     private ComboBox<ContasPagar> cbSelecionarDesp;
-    
+
     private List<Grupo> lista = new ArrayList<>();
     private ObservableList<Grupo> obslist;
-    
+
     private List<ContasPagar> grupolist = new ArrayList<>();
     private ObservableList<ContasPagar> grupoobslist;
 
@@ -47,24 +47,33 @@ public class TelaAdicionarPagamentoControler implements Initializable {
         cbSelecionarDesp.getSelectionModel().selectFirst();
         // TODO
     }
-private void preecheCombo1(){
-        Grupo fp1 = new Grupo(1,"ASD");
-        lista.add(fp1);
-        Grupo fp2 = new Grupo(2,"QQQ");
-        lista.add(fp2);
-        
+
+    private void preecheCombo1() {
+        Grupo gp1 = new Grupo(1, "Toledo1");
+        lista.add(gp1);
+        Grupo gp2 = new Grupo(2, "Toledos");
+        lista.add(gp2);
+        Grupo gp3 = new Grupo(3, "Mercado");
+        lista.add(gp3);
+        Grupo gp4 = new Grupo(4, "Contas Mensais");
+        lista.add(gp4);
+        Grupo gp5 = new Grupo(5, "Viagem Santos");
+        lista.add(gp5);
+        Grupo gp6 = new Grupo(6, "Trabalho");
+        lista.add(gp6);
+        Grupo gp7 = new Grupo(7, "TCC");
+        lista.add(gp7);
+
         obslist = FXCollections.observableArrayList(lista);
         cbSelecionarGrp.setItems(obslist);
     }
-    
-        private void preecheCombo2(){
-        ContasPagar gp1 = new ContasPagar(1,"RQWE");
-        grupolist.add(gp1);
-        ContasPagar gp2 = new ContasPagar(2,"$#$@");
-        grupolist.add(gp2);
-        
+
+    private void preecheCombo2() {
+        ContasPagar cp1 = new ContasPagar(1, "Nova Despesa");
+        grupolist.add(cp1);
+
         grupoobslist = FXCollections.observableArrayList(grupolist);
         cbSelecionarDesp.setItems(grupoobslist);
-    }    
-    
+    }
+
 }
