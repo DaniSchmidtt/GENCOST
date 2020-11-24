@@ -92,10 +92,10 @@
                         </Label>
                         <TableView layoutX="11.0" layoutY="169.0" prefHeight="289.0" prefWidth="676.0" fx:id="tableContas">
                             <columns>
-                                <TableColumn fx:id="dataMcol" prefWidth="201.0" text="Data de Máxima de Pagamento" />
+                                <TableColumn fx:id="dataMcol" prefWidth="201.0" text="Data de Criação" />
                                 <TableColumn fx:id="grupocol" minWidth="0.0" prefWidth="120.00003051757812" text="Grupo " />
                                 <TableColumn fx:id="valorcol" prefWidth="139.0" text="Valor" />
-                                <TableColumn fx:id="formacol" prefWidth="217.0" text="Forma de pagamento aceita" />
+                                <TableColumn fx:id="formacol" prefWidth="217.0" text="Saldo" />
                             </columns>
                         </TableView>
                         <TextField accessibleText="Buscar usuário" layoutX="150.0" layoutY="90.0" prefHeight="34.0" prefWidth="374.0" style="-fx-border-color: #6a65ee; -fx-border-radius: 30;" />

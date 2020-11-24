@@ -179,10 +179,26 @@ public class ConexaoDB {
         try {
             ResultSet resultSet = null;
             Statement statement = conecta().createStatement();
-            String selectSql = "SELECT DE.Data_Maxima,GRP.NomeGrupo,DE.Pagamento ,DE.Valor FROM tbUsuario USR INNER JOIN tbDespesaUsuario DEUSR ON USR.ID=\n" +
+            String selectSql = "SELECT DE.Data_Maxima,GRP.NomeGrupo,(select DE.Descricao FROM tbDespesa DE INNER JOIN tbDespesaGrupo DEGRP ON DE.ID = DEGRP.IDDespesa WHERE DEGRP.ID_Desp_Grp=DEUSR.ID_Desp_Grp) ,DE.Valor FROM tbUsuario USR INNER JOIN tbDespesaUsuario DEUSR ON USR.ID=\n" +
 "DEUSR.IDUsuario INNER JOIN tbDespesa DE ON DE.ID=DEUSR.IDDespesa INNER JOIN\n" +
 "tbDespesaGrupo DEGRP ON DEGRP.ID_Desp_Grp = DEUSR.ID_Desp_Grp INNER JOIN tbGrupo GRP\n" +
 "ON DEGRP.IDGrupo=GRP.ID WHERE USR.ID = "+ usr;
+            resultSet = statement.executeQuery(selectSql);
+            conecta().close();
+            return resultSet;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        conecta().close();
+        return null;
+    }
+          public ResultSet getContasaAbertas(int usr) throws SQLException {
+        try {
+            ResultSet resultSet = null;
+            Statement statement = conecta().createStatement();
+            String selectSql = "select DE.Data_Maxima,DE.Valor,DE.Saldo,GRP.NomeGrupo from \n" +
+"tbDespesa DE INNER join tbDespesaGrupo DEGRP on DE.ID = DEGRP.IDDespesa \n" +
+"INNER JOIN tbGrupo GRP ON DEGRP.IDGrupo = GRP.ID INNER JOIN tbUsuarioGrupo USRGRP ON USRGRP.IDGrupo=GRP.ID WHERE USRGRP.IDUsuario = "+ usr;
             resultSet = statement.executeQuery(selectSql);
             conecta().close();
             return resultSet;

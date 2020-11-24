@@ -92,7 +92,7 @@
                       <TableColumn fx:id="datapagcol" prefWidth="149.0" text="Data de Pagamento" />
                       <TableColumn fx:id="grpcol" minWidth="0.0" prefWidth="171.00003051757812" text="Grupo " />
                         <TableColumn fx:id="vlrpgcol" prefWidth="139.0" text="Valor Pago" />
-                        <TableColumn fx:id="formapgcol" prefWidth="217.0" text="Forma de pagamento" />
+                        <TableColumn fx:id="formapgcol" prefWidth="217.0" text="Despesa" />
                     </columns>
                   </TableView>
                   <TextField accessibleText="Buscar usuário" layoutX="150.0" layoutY="99.0" prefHeight="34.0" prefWidth="374.0" style="-fx-border-color: #6a65ee; -fx-border-radius: 30;" />

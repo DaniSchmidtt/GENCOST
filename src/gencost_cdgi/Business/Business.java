@@ -8,6 +8,7 @@ package gencost_cdgi.Business;
 import gencost_cdgi.DAO.ConexaoDB;
 import gencost_cdgi.Gencost_CDGI;
 import gencost_cdgi.Views.ContasHistTable;
+import gencost_cdgi.Views.ContasPagarTable;
 import gencost_cdgi.Views.GrupoTable;
 import gencost_cdgi.Views.MembrosTable;
 import gencost_cdgi.Views.Usuario;
@@ -201,14 +202,24 @@ public class Business {
             user = user.getInstance();
             ArrayList<ContasHistTable> retorno = new ArrayList<ContasHistTable>();
             ResultSet resultSet = conect.getContasHistorico(user.getId());
-            while (resultSet.next()) {
-                String aux;
-                if(resultSet.getString(3).equals("1")){
-                    aux = "A vista";
-                }else{
-                aux = "A prazo";
-                }                
-                retorno.add(new ContasHistTable(resultSet.getString(1), resultSet.getString(2),resultSet.getString(4),aux));
+            while (resultSet.next()) {             
+                retorno.add(new ContasHistTable(resultSet.getString(1), resultSet.getString(2),resultSet.getString(4),resultSet.getString(3)));
+            }
+            return retorno;
+        } catch (SQLException ex) {
+            Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+        public ArrayList<ContasPagarTable> SelecionaContasAbertas() {
+        ConexaoDB conect = new ConexaoDB();
+        try {
+            Usuario user = null;
+            user = user.getInstance();
+            ArrayList<ContasPagarTable> retorno = new ArrayList<ContasPagarTable>();
+            ResultSet resultSet = conect.getContasaAbertas(user.getId());
+            while (resultSet.next()) {             
+                retorno.add(new ContasPagarTable(resultSet.getString(1), resultSet.getString(4),resultSet.getString(2),resultSet.getString(3)));
             }
             return retorno;
         } catch (SQLException ex) {

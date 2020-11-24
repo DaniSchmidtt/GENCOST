@@ -5,6 +5,7 @@
  */
 package gencost_cdgi.Interface.Controlers;
 
+import gencost_cdgi.Business.Business;
 import gencost_cdgi.Interface.Stance.DashboardHomeV2Stance;
 import gencost_cdgi.Interface.Stance.MeusGruposStance;
 import gencost_cdgi.Interface.Stance.TelaAdicionarContaStance;
@@ -145,8 +146,8 @@ public class TelaContasAbertasController implements Initializable {
     }
     private ObservableList<ContasPagarTable> listaContasPagar() {
         
-        return FXCollections.observableArrayList(new ContasPagarTable("10-06-20", "Condominio", "95,90", "a VISTA"),
-                new ContasPagarTable("19-06-20", "Condominio", "69", "a VISTA")
+        Business usersgrupo = new Business();
+        return FXCollections.observableArrayList(usersgrupo.SelecionaContasAbertas()
         );
     }
 
