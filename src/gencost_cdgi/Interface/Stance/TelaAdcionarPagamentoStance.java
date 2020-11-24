@@ -9,20 +9,21 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author caiod
+ * @author danil
  */
-public class TelaAdicionarContaStance {
-
-    private static TelaAdicionarContaStance instancia;
+public class TelaAdcionarPagamentoStance {
+    
+    private static TelaAdcionarPagamentoStance instancia;
     public Stage stage = new Stage();
 
-    private TelaAdicionarContaStance() {
+    private TelaAdcionarPagamentoStance() {
     }
 
-    public static synchronized TelaAdicionarContaStance getInstance() {
+    public static synchronized TelaAdcionarPagamentoStance getInstance() {
         if (instancia == null) {
-            instancia = new TelaAdicionarContaStance();
+            instancia = new TelaAdcionarPagamentoStance();
         }
         return instancia;
     }
+    
 }

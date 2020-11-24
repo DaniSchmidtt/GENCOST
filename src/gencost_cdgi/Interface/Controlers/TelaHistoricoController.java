@@ -117,13 +117,13 @@ public class TelaHistoricoController implements Initializable {
 
                 Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/TelaAdicionarConta.fxml"));
+            root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/TelaAdicionarPagamento.fxml"));
 
             Scene add = new Scene(root);
-            TelaAdicionarContaStance addS = null;
-            addS = addS.getInstance();
-            addS.stage.setScene(add);
-            addS.stage.show();
+            TelaAdicionarContaStance adcS = null;
+            adcS = adcS.getInstance();
+            adcS.stage.setScene(add);
+            adcS.stage.show();
         } catch (IOException ex) {
             Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);
         }

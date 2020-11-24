@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gencost_cdgi.Views;
+package gencost_cdgi.Interface.Controlers;
 
 /**
  *
  * @author danil
  */
-public class MebrosTable {
+public class TelaAdicionarPagamentoControler {
     
 }

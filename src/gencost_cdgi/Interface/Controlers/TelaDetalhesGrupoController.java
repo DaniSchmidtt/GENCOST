@@ -11,6 +11,7 @@ import gencost_cdgi.Interface.Stance.TelaDeCadastroStance;
 import gencost_cdgi.Interface.Stance.TelaDetalhesGrupoStance;
 import gencost_cdgi.Interface.Thread.ThreaDa;
 import gencost_cdgi.Views.HistoricoPagamentotable;
+import gencost_cdgi.Views.MembrosTable;
 import gencost_cdgi.Views.Usuario;
 import java.io.IOException;
 import javafx.scene.control.TextField;
@@ -46,42 +47,42 @@ public class TelaDetalhesGrupoController implements Initializable {
     public TextField txtemail;
     @FXML
     private Label lblemail;
-
+    
     @FXML
     private Label lblnome;
-
+    
     @FXML
     private Label emailusr;
-
+    
     @FXML
     private Label nomeusr;
     @FXML
     private Label lblnomegrupo;
-
+    
     @FXML
     private TableView<HistoricoPagamentotable> HistPagtable;
-
+    
     @FXML
     private TableColumn<HistoricoPagamentotable, String> usuariocol;
-
+    
     @FXML
     private TableColumn<HistoricoPagamentotable, Double> pagamentocol;
-
+    
     @FXML
     private TableColumn<HistoricoPagamentotable, String> contacol;
-
+    
     @FXML
     private TableColumn<HistoricoPagamentotable, String> datacol;
-
+    
     @FXML
-    private TableView Membrotable;
-
+    private TableView<MembrosTable> Membrotable;
+    
     @FXML
-    private TableColumn ussusuariocol;
-
+    private TableColumn<MembrosTable, String> ussusuariocol;
+    
     @FXML
-    private TableColumn ussnomecol;
-
+    private TableColumn<MembrosTable, String> ussnomecol;
+    
     @FXML
     private void handleButtonActionPESQ(ActionEvent event) throws IOException, InterruptedException {
         if (txtemail.getText().trim().equals("")) {
@@ -111,11 +112,11 @@ public class TelaDetalhesGrupoController implements Initializable {
                 mensagem.mensagem = ("Usuario não encontrado!");
                 thread.run();
             }
-
+            
         }
-
+        
     }
-
+    
     @FXML
     private void handleButtonActionSalvar(ActionEvent event) throws IOException, InterruptedException {
         Usuario usr = null;
@@ -132,7 +133,7 @@ public class TelaDetalhesGrupoController implements Initializable {
             mensagem = mensagem.getInstance();
             mensagem.mensagem = ("Este é o seu e-mail!");
             thread.run();
-
+            
         } else {
             TelaDetalhesGrupoStance ctaS = null;
             ctaS = ctaS.getInstance();
@@ -146,30 +147,44 @@ public class TelaDetalhesGrupoController implements Initializable {
             thread.run();
         }
     }
-
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         TelaDetalhesGrupoStance ctaS = null;
         ctaS = ctaS.getInstance();
         lblnomegrupo.setText(ctaS.nomegrupo);
-
+        
         usuariocol.setCellValueFactory(new PropertyValueFactory<>("usuario"));
         pagamentocol.setCellValueFactory(new PropertyValueFactory<>("pagamento"));
         contacol.setCellValueFactory(new PropertyValueFactory<>("conta"));
         datacol.setCellValueFactory(new PropertyValueFactory<>("data"));
         
         HistPagtable.setItems(listaDePagamentos());
-
+        
+        ussusuariocol.setCellValueFactory(new PropertyValueFactory<>("ussusuario"));
+        ussnomecol.setCellValueFactory(new PropertyValueFactory<>("ussnome"));
+        
+        Membrotable.setItems(listaMembros());
+        
     }
-
+    
     private ObservableList<HistoricoPagamentotable> listaDePagamentos() {
         return FXCollections.observableArrayList(
                 new HistoricoPagamentotable("Danilo", 22.90, "Carne", "23-11-20"),
                 new HistoricoPagamentotable("Caio", 34.90, "Carne", "20-11-20"),
                 new HistoricoPagamentotable("Clayton", 60.90, "Carne", "29-11-20"),
-                new HistoricoPagamentotable("Vitor",12.90,"Carne","12-11-20")
+                new HistoricoPagamentotable("Vitor", 12.90, "Carne", "12-11-20")
         );
     }
-
+    
+    private ObservableList<MembrosTable> listaMembros() {
+        return FXCollections.observableArrayList(
+                new MembrosTable("Danilo",  "DaniSchmidtt" ),
+                new MembrosTable("Caio",  "DaioCanielli" ),
+                new MembrosTable("Leonardo",  "Marcão" ),
+                new MembrosTable("Claudio",  "Clayton" )
+        );
+    }
+    
 }
