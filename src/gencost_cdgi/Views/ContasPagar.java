@@ -14,6 +14,34 @@ import javafx.beans.property.SimpleStringProperty;
 public class ContasPagar {
 
     /**
+     * @return the id
+     */
+    public int getId() {
+        return id;
+    }
+
+    /**
+     * @param id the id to set
+     */
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    /**
+     * @return the descricao
+     */
+    public String getDescricao() {
+        return descricao;
+    }
+
+    /**
+     * @param descricao the descricao to set
+     */
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    /**
      * @return the datamax
      */
     public String getDatamax() {
@@ -68,20 +96,33 @@ public class ContasPagar {
     public void setFormapg(String formapg) {
         this.formapg = formapg;
     }
-    
+
     public static synchronized ContasPagar getInstance() {
         if (instancia == null) {
             instancia = new ContasPagar();
         }
         return instancia;
     }
-    
+    private int id;
+    private String descricao;
     private String datamax;
     private String grupo;
     private String valor;
     private String formapg;
     private static ContasPagar instancia;
-    private ContasPagar(){
-        
+
+    private ContasPagar() {
+
+    }
+
+    public ContasPagar(int id, String descricao) {
+        this.id = id;
+        this.descricao = descricao;
+
+    }
+
+    @Override
+    public String toString() {
+        return descricao;
     }
 }
