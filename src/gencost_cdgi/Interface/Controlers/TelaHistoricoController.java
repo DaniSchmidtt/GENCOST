@@ -5,6 +5,7 @@
  */
 package gencost_cdgi.Interface.Controlers;
 
+import gencost_cdgi.Business.Business;
 import gencost_cdgi.Interface.Stance.DashboardHomeV2Stance;
 import gencost_cdgi.Interface.Stance.MeusGruposStance;
 import gencost_cdgi.Interface.Stance.TelaAdcionarPagamentoStance;
@@ -113,10 +114,11 @@ public class TelaHistoricoController implements Initializable {
             Logger.getLogger(ThreaDa.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-@FXML
+
+    @FXML
     private void handleButtonActionADDCON(ActionEvent event) throws IOException, InterruptedException {
 
-                Parent root;
+        Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/TelaAdicionarPagamento.fxml"));
 
@@ -144,8 +146,6 @@ public class TelaHistoricoController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
 
-        
-
         datapagcol.setCellValueFactory(new PropertyValueFactory<>("datapg"));
 
         grpcol.setCellValueFactory(new PropertyValueFactory<>("gp"));
@@ -153,15 +153,13 @@ public class TelaHistoricoController implements Initializable {
         vlrpgcol.setCellValueFactory(new PropertyValueFactory<>("vlrpg"));
 
         formapgcol.setCellValueFactory(new PropertyValueFactory<>("formapg"));
-        
+
         tablehistorico.setItems(listahistContas());
     }
 
     private ObservableList<ContasHistTable> listahistContas() {
-        
-        return FXCollections.observableArrayList(
-                new ContasHistTable("10-05-20", "Condominio", "25,90", "a VISTA"),
-                new ContasHistTable("19-05-20", "Condominio", "29", "a VISTA")
+        Business usersgrupo = new Business();
+        return FXCollections.observableArrayList(usersgrupo.SelecionaContasHistoricousr()
         );
     }
 

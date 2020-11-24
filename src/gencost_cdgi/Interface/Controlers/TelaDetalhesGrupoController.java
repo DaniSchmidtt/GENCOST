@@ -140,7 +140,6 @@ public class TelaDetalhesGrupoController implements Initializable {
             ctaS = ctaS.getInstance();
             Business usrvalida = new Business();
             ArrayList<String> valida = usrvalida.pesquisaUser(emailusr.getText());
-            
             usrvalida.AdicionarUsrGrupo(Integer.valueOf(valida.get(0)), ctaS.grupoId);
             ThreaDa thread = new ThreaDa();
             MensagemDeAlertaStance mensagem = null;

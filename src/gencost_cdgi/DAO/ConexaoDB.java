@@ -174,4 +174,22 @@ public class ConexaoDB {
         conecta().close();
         return null;
     }
+    
+     public ResultSet getContasHistorico(int usr) throws SQLException {
+        try {
+            ResultSet resultSet = null;
+            Statement statement = conecta().createStatement();
+            String selectSql = "SELECT DE.Data_Maxima,GRP.NomeGrupo,DE.Pagamento ,DE.Valor FROM tbUsuario USR INNER JOIN tbDespesaUsuario DEUSR ON USR.ID=\n" +
+"DEUSR.IDUsuario INNER JOIN tbDespesa DE ON DE.ID=DEUSR.IDDespesa INNER JOIN\n" +
+"tbDespesaGrupo DEGRP ON DEGRP.ID_Desp_Grp = DEUSR.ID_Desp_Grp INNER JOIN tbGrupo GRP\n" +
+"ON DEGRP.IDGrupo=GRP.ID WHERE USR.ID = "+ usr;
+            resultSet = statement.executeQuery(selectSql);
+            conecta().close();
+            return resultSet;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        conecta().close();
+        return null;
+    }
 }

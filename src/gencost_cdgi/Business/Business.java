@@ -7,6 +7,7 @@ package gencost_cdgi.Business;
 
 import gencost_cdgi.DAO.ConexaoDB;
 import gencost_cdgi.Gencost_CDGI;
+import gencost_cdgi.Views.ContasHistTable;
 import gencost_cdgi.Views.GrupoTable;
 import gencost_cdgi.Views.MembrosTable;
 import gencost_cdgi.Views.Usuario;
@@ -185,6 +186,29 @@ public class Business {
             ResultSet resultSet = conect.getUsuariosGrupos(idgrupo);
             while (resultSet.next()) {
                 retorno.add(new MembrosTable(resultSet.getString(1), resultSet.getString(2)));
+            }
+            return retorno;
+        } catch (SQLException ex) {
+            Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+    
+    public ArrayList<ContasHistTable> SelecionaContasHistoricousr() {
+        ConexaoDB conect = new ConexaoDB();
+        try {
+            Usuario user = null;
+            user = user.getInstance();
+            ArrayList<ContasHistTable> retorno = new ArrayList<ContasHistTable>();
+            ResultSet resultSet = conect.getContasHistorico(user.getId());
+            while (resultSet.next()) {
+                String aux;
+                if(resultSet.getString(3).equals("1")){
+                    aux = "A vista";
+                }else{
+                aux = "A prazo";
+                }                
+                retorno.add(new ContasHistTable(resultSet.getString(1), resultSet.getString(2),resultSet.getString(4),aux));
             }
             return retorno;
         } catch (SQLException ex) {

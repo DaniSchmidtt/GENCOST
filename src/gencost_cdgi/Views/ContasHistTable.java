@@ -73,7 +73,11 @@ public class ContasHistTable {
     }
 
     public void setFormapg(String formapg) {
-        this.formapg.set(formapg);
+        if(formapg.equals("1")){
+        this.formapg.set("A vista");}
+        else{
+        this.formapg.set("A prazo");
+        }
     }
 
    
