@@ -159,32 +159,32 @@ public class DashboardHomeV2Controller implements Initializable {
         lblemail.setText(email);
 
         XYChart.Series series1 = new XYChart.Series();
-        series1.setName("2003");
-        series1.getData().add(new XYChart.Data(austria, 15));
-        series1.getData().add(new XYChart.Data(brazil, 12));
-        series1.getData().add(new XYChart.Data(france, 10));
-        series1.getData().add(new XYChart.Data(italy, 9));
-        series1.getData().add(new XYChart.Data(usa, 7));
+        series1.setName("Pago");
+        series1.getData().add(new XYChart.Data(austria, 100));
+        series1.getData().add(new XYChart.Data(brazil, 250));
+        series1.getData().add(new XYChart.Data(france, 200));
+        series1.getData().add(new XYChart.Data(italy, 0));
+        series1.getData().add(new XYChart.Data(usa, 0));
 
         XYChart.Series series2 = new XYChart.Series();
-        series2.setName("2004");
-        series2.getData().add(new XYChart.Data(austria, 5));
-        series2.getData().add(new XYChart.Data(brazil, 7));
-        series2.getData().add(new XYChart.Data(france, 4));
-        series2.getData().add(new XYChart.Data(italy, 5));
-        series2.getData().add(new XYChart.Data(usa, 3));
+        series2.setName("Saldo");
+        series2.getData().add(new XYChart.Data(austria, 20));
+        series2.getData().add(new XYChart.Data(brazil, 40));
+        series2.getData().add(new XYChart.Data(france, 60));
+        series2.getData().add(new XYChart.Data(italy, 20));
+        series2.getData().add(new XYChart.Data(usa, 30));
 
         bc.getData().addAll(series1, series2);
 
         ObservableList<PieChart.Data> pieChartData
                 = FXCollections.observableArrayList(
-                        new PieChart.Data("Grapefruit", 13),
-                        new PieChart.Data("Oranges", 25),
-                        new PieChart.Data("Plums", 10),
-                        new PieChart.Data("Pears", 22),
-                        new PieChart.Data("Apples", 30));
+                        new PieChart.Data("TCC", 30),
+                        new PieChart.Data("Trabalho", 20),
+                        new PieChart.Data("Viagem Santos", 260),
+                        new PieChart.Data("Contas Mensais", 290),
+                        new PieChart.Data("Mercado", 120));
         pieChart.setData(pieChartData);
-        pieChart.setTitle("Imported Fruits");
+        pieChart.setTitle("");
         pieChart.setLabelLineLength(10);
         pieChart.setLegendSide(Side.LEFT);
         pieChart.setVisible(true);
@@ -192,10 +192,10 @@ public class DashboardHomeV2Controller implements Initializable {
 
     }
 
-    final static String austria = "Austria";
-    final static String brazil = "Brazil";
-    final static String france = "France";
-    final static String italy = "Italy";
-    final static String usa = "USA";
+    final static String austria = "Mercado";
+    final static String brazil = "Contas Mensais";
+    final static String france = "Viagem Santos";
+    final static String italy = "Trabalho";
+    final static String usa = "TCC";
 
 }

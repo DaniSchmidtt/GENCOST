@@ -99,8 +99,7 @@
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
-                     <graphic>
-                        
+                     <graphic>                        
                      </graphic>
                   </Button>
                </children>

@@ -17,7 +17,7 @@
             <Image url="gencost_cdgi/Interface/Images/piggy-bank1.png" />
          </image>
       </ImageView>
-      <Label layoutX="36.0" layoutY="152.0" text="Adicionar nova Conta" textFill="#7c7a7a">
+      <Label layoutX="36.0" layoutY="152.0" text="Descrição da Despesa" textFill="#7c7a7a">
          <font>
             <Font name="Impact" size="24.0" />
          </font>
@@ -32,13 +32,8 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
-      <TextField layoutX="40.0" layoutY="219.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Data máxima de pagamento" />
+      <TextField layoutX="40.0" layoutY="219.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Descrição" />
       <TextField layoutX="40.0" layoutY="268.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="300.0" promptText="Valor total da conta" />
-      <Label layoutX="378.0" layoutY="-1.0" prefHeight="35.0" prefWidth="29.0" text="X">
-         <font>
-            <Font name="System Bold" size="24.0" />
-         </font>
-      </Label>
       <ComboBox fx:id="cbFormapg" layoutX="40.0" layoutY="316.0" minHeight="40.0" minWidth="300.0" prefWidth="150.0" promptText="Selecione as formas de pagamento" />
       <ComboBox layoutX="40.0" layoutY="365.0" minHeight="40.0" minWidth="300.0" prefWidth="150.0" promptText="Selecione o Grupo" />
    </children>
