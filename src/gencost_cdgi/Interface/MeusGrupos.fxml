@@ -13,7 +13,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane  maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #edebf2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gencost_cdgi.Interface.Controlers.MeusGruposController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: #edebf2;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gencost_cdgi.Interface.Controlers.MeusGruposController">
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: white;">
          <children>
@@ -91,11 +91,11 @@
                         <Font name="Ebrima Bold" size="24.0" />
                      </font>
                   </Button>
-                  <TableView fx:id="tableGrupo" layoutX="29.0" layoutY="158.0" prefHeight="370.0" prefWidth="640.0">
+                  <TableView fx:id="tableGrupo" layoutX="29.0" layoutY="158.0" prefHeight="370.0" prefWidth="645.0">
                     <columns>
-                      <TableColumn prefWidth="280.0" text="Quantidade de Participantes do Grupo" fx:id="grupocol" />
-                      <TableColumn minWidth="0.0" prefWidth="360.0" text="Nome do Grupo" fx:id="imagemcol"  />
-                      <TableColumn minWidth="0.0" prefWidth="0.1" text="id" fx:id="idcol"  />
+                      <TableColumn fx:id="grupocol" prefWidth="280.0" text="Quantidade de Participantes do Grupo" />
+                      <TableColumn fx:id="imagemcol" minWidth="0.0" prefWidth="360.0" text="Nome do Grupo" />
+                      <TableColumn fx:id="idcol" minWidth="0.0" prefWidth="0.1" text="id" />
                     </columns>
                   </TableView>
                </children>
