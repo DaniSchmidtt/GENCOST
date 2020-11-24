@@ -95,11 +95,6 @@
                         <TableColumn fx:id="formapgcol" prefWidth="217.0" text="Despesa" />
                     </columns>
                   </TableView>
-                  <TextField accessibleText="Buscar usuário" layoutX="150.0" layoutY="99.0" prefHeight="34.0" prefWidth="374.0" style="-fx-border-color: #6a65ee; -fx-border-radius: 30;" />
-                  <Button layoutX="533.0" layoutY="105.0" mnemonicParsing="false" text="Pesquisar">
-                     <graphic>                        
-                     </graphic>
-                  </Button>
                   <Button onAction="#handleButtonActionADDCON" layoutX="169.0" layoutY="494.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="50.0" prefWidth="374.0" style="-fx-background-color: #ee6a65; -fx-text-fill: WHITE; -fx-border-color: #a64a46; -fx-border-width: 1; -fx-border-style: solid;" text="Adicionar pagamento ao Histórico">
                      <font>
                         <Font name="System Bold" size="14.0" />
