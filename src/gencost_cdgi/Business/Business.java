@@ -176,15 +176,15 @@ public class Business {
         return null;
     }
 
-    public ArrayList<GrupoTable> SelecionaUsuariosGrupo() {
+    public ArrayList<MembrosTable> SelecionaUsuariosGrupo(int idgrupo) {
         ConexaoDB conect = new ConexaoDB();
         try {
             Usuario user = null;
             user = user.getInstance();
-            ArrayList<GrupoTable> retorno = new ArrayList<GrupoTable>();
-            ResultSet resultSet = conect.getGrupos(user.getId());
+            ArrayList<MembrosTable> retorno = new ArrayList<MembrosTable>();
+            ResultSet resultSet = conect.getUsuariosGrupos(idgrupo);
             while (resultSet.next()) {
-                retorno.add(new GrupoTable(resultSet.getString(3), resultSet.getString(2), resultSet.getInt(1)));
+                retorno.add(new MembrosTable(resultSet.getString(1), resultSet.getString(2)));
             }
             return retorno;
         } catch (SQLException ex) {

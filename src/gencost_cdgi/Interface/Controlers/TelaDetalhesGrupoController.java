@@ -135,10 +135,12 @@ public class TelaDetalhesGrupoController implements Initializable {
             thread.run();
             
         } else {
+            
             TelaDetalhesGrupoStance ctaS = null;
             ctaS = ctaS.getInstance();
             Business usrvalida = new Business();
             ArrayList<String> valida = usrvalida.pesquisaUser(emailusr.getText());
+            
             usrvalida.AdicionarUsrGrupo(Integer.valueOf(valida.get(0)), ctaS.grupoId);
             ThreaDa thread = new ThreaDa();
             MensagemDeAlertaStance mensagem = null;
@@ -180,12 +182,9 @@ public class TelaDetalhesGrupoController implements Initializable {
     
     private ObservableList<MembrosTable> listaMembros() {
         Business usersgrupo = new Business(); 
-        
-        return FXCollections.observableArrayList(
-                new MembrosTable("Danilo",  "DaniSchmidtt" ),
-                new MembrosTable("Caio",  "DaioCanielli" ),
-                new MembrosTable("Leonardo",  "Marcão" ),
-                new MembrosTable("Claudio",  "Clayton" )
+                TelaDetalhesGrupoStance ctaS = null;
+        ctaS = ctaS.getInstance();
+        return FXCollections.observableArrayList(usersgrupo.SelecionaUsuariosGrupo(ctaS.grupoId)
         );
     }
     

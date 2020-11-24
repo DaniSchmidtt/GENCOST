@@ -7,6 +7,7 @@ package gencost_cdgi.Interface.Controlers;
 
 import gencost_cdgi.Interface.Stance.DashboardHomeV2Stance;
 import gencost_cdgi.Interface.Stance.MeusGruposStance;
+import gencost_cdgi.Interface.Stance.TelaAdcionarPagamentoStance;
 import gencost_cdgi.Interface.Stance.TelaAdicionarContaStance;
 import gencost_cdgi.Interface.Stance.TelaContasAbertasStance;
 import gencost_cdgi.Interface.Stance.TelaHistoricoStance;
@@ -120,7 +121,7 @@ public class TelaHistoricoController implements Initializable {
             root = FXMLLoader.load(getClass().getResource("/gencost_cdgi/Interface/TelaAdicionarPagamento.fxml"));
 
             Scene add = new Scene(root);
-            TelaAdicionarContaStance adcS = null;
+            TelaAdcionarPagamentoStance adcS = null;
             adcS = adcS.getInstance();
             adcS.stage.setScene(add);
             adcS.stage.show();

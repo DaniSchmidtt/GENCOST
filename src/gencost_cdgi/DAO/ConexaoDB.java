@@ -164,7 +164,7 @@ public class ConexaoDB {
         try {
             ResultSet resultSet = null;
             Statement statement = conecta().createStatement();
-            String selectSql = "SELECT  FROM tbUsuarioGrupo WHERE IDGrupo = "+ grupo;
+            String selectSql = "select Nickname,Email from tbUsuario inner join tbUsuarioGrupo on ID = IDUsuario inner join tbGrupo gp on gp.ID = IDGrupo where IDGrupo = "+ grupo;
             resultSet = statement.executeQuery(selectSql);
             conecta().close();
             return resultSet;
