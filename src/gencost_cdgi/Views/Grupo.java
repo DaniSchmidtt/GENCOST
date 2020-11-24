@@ -67,5 +67,14 @@ public class Grupo {
     private Grupo(){
         
     }
+    public Grupo(int id, String nome){
+        this.id = id;
+        this.nome = nome;
+    }
+    
+    @Override
+    public String toString(){
+        return nome;
+    }
     
 }
