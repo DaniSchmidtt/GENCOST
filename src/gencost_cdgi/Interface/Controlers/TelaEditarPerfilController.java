@@ -45,7 +45,7 @@ public class TelaEditarPerfilController implements Initializable {
         Business usrvalida = new Business();
         Usuario usr = null;
         usr = usr.getInstance();
-        
+
         if (txtusuario.getText().trim().equals("") && txtemail.getText().trim().equals("")
                 && txtsenhan.getText().trim().equals("") && txtconfsenha.getText().trim().equals("")) {
             ThreaDa thread = new ThreaDa();
@@ -63,12 +63,20 @@ public class TelaEditarPerfilController implements Initializable {
                 thread.run();
             }
             if (!txtemail.getText().trim().equals("")) {
-                usrvalida.UpdateUser(txtemail.getText(), usr.getSenha(), usr.getNome());
-                ThreaDa thread = new ThreaDa();
-                MensagemDeAlertaStance mensagem = null;
-                mensagem = mensagem.getInstance();
-                mensagem.mensagem = ("Usuario atualizado!");
-                thread.run();
+                if (!usrvalida.validaUser(txtemail.getText())) {
+                    usrvalida.UpdateUser(txtemail.getText(), usr.getSenha(), usr.getNome());
+                    ThreaDa thread = new ThreaDa();
+                    MensagemDeAlertaStance mensagem = null;
+                    mensagem = mensagem.getInstance();
+                    mensagem.mensagem = ("Usuario atualizado!");
+                    thread.run();
+                } else {
+                    ThreaDa thread = new ThreaDa();
+                    MensagemDeAlertaStance mensagem = null;
+                    mensagem = mensagem.getInstance();
+                    mensagem.mensagem = ("E-mail ja existe no banco");
+                    thread.run();
+                }
             }
             if (!txtsenhan.getText().trim().equals("")) {
                 if (txtsenha.getText().trim().equals("")) {

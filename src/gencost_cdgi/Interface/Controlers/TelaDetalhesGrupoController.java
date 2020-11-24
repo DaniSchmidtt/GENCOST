@@ -179,6 +179,8 @@ public class TelaDetalhesGrupoController implements Initializable {
     }
     
     private ObservableList<MembrosTable> listaMembros() {
+        Business usersgrupo = new Business(); 
+        
         return FXCollections.observableArrayList(
                 new MembrosTable("Danilo",  "DaniSchmidtt" ),
                 new MembrosTable("Caio",  "DaioCanielli" ),

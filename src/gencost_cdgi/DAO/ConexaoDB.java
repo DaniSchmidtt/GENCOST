@@ -143,9 +143,9 @@ public class ConexaoDB {
         conecta().close();
         return null;
     }
-    
-     public ResultSet getGrupos(int idusr) throws SQLException{
-             try {
+
+    public ResultSet getGrupos(int idusr) throws SQLException {
+        try {
             ResultSet resultSet = null;
             Statement statement = conecta().createStatement();
             String selectSql = "SELECT ID,NomeGrupo,(SELECT COUNT(*) FROM tbUsuarioGrupo WHERE IDGrupo = ID)"
@@ -158,5 +158,20 @@ public class ConexaoDB {
         }
         conecta().close();
         return null;
-     }
+    }
+
+    public ResultSet getUsuariosGrupos(int grupo) throws SQLException {
+        try {
+            ResultSet resultSet = null;
+            Statement statement = conecta().createStatement();
+            String selectSql = "SELECT  FROM tbUsuarioGrupo WHERE IDGrupo = "+ grupo;
+            resultSet = statement.executeQuery(selectSql);
+            conecta().close();
+            return resultSet;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        conecta().close();
+        return null;
+    }
 }

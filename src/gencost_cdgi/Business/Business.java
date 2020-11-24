@@ -8,6 +8,7 @@ package gencost_cdgi.Business;
 import gencost_cdgi.DAO.ConexaoDB;
 import gencost_cdgi.Gencost_CDGI;
 import gencost_cdgi.Views.GrupoTable;
+import gencost_cdgi.Views.MembrosTable;
 import gencost_cdgi.Views.Usuario;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -166,12 +167,29 @@ public class Business {
             ArrayList<GrupoTable> retorno = new ArrayList<GrupoTable>();
             ResultSet resultSet = conect.getGrupos(user.getId());
             while (resultSet.next()) {
-                retorno.add(new GrupoTable(resultSet.getString(3),resultSet.getString(2),resultSet.getInt(1)) );
-                }
+                retorno.add(new GrupoTable(resultSet.getString(3), resultSet.getString(2), resultSet.getInt(1)));
+            }
             return retorno;
-            }catch (SQLException ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
         }
-            return null;
-        }
+        return null;
     }
+
+    public ArrayList<GrupoTable> SelecionaUsuariosGrupo() {
+        ConexaoDB conect = new ConexaoDB();
+        try {
+            Usuario user = null;
+            user = user.getInstance();
+            ArrayList<GrupoTable> retorno = new ArrayList<GrupoTable>();
+            ResultSet resultSet = conect.getGrupos(user.getId());
+            while (resultSet.next()) {
+                retorno.add(new GrupoTable(resultSet.getString(3), resultSet.getString(2), resultSet.getInt(1)));
+            }
+            return retorno;
+        } catch (SQLException ex) {
+            Logger.getLogger(Gencost_CDGI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+}
