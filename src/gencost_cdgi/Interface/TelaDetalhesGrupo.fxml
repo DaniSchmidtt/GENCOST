@@ -35,10 +35,10 @@
       </Label>
       <TableView fx:id="HistPagtable" layoutX="6.0" layoutY="111.0" prefHeight="244.0" prefWidth="387.0">
         <columns>
-          <TableColumn prefWidth="90.0" text="Usuario" />
-          <TableColumn prefWidth="72.0" text="Pagamento" />
-            <TableColumn prefWidth="103.0" text="Conta" />
-            <TableColumn prefWidth="120.0" text="Data" />
+          <TableColumn fx:id="usuariocol" prefWidth="90.0" text="Usuario" />
+          <TableColumn fx:id="pagamentocol" prefWidth="72.0" text="Pagamento" />
+            <TableColumn fx:id="contacol" prefWidth="103.0" text="Conta" />
+            <TableColumn fx:id="datacol" prefWidth="120.0" text="Data" />
         </columns>
       </TableView>
       <TextField fx:id="txtemail" layoutX="12.0" layoutY="532.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="40.0" prefWidth="294.0" promptText="Insira Email do novo usuario" />
@@ -69,8 +69,8 @@
       </Button>
       <TableView fx:id="Membrotable" layoutX="6.0" layoutY="355.0" prefHeight="163.0" prefWidth="387.0">
         <columns>
-          <TableColumn prefWidth="193.0" text="Usuário" />
-          <TableColumn prefWidth="193.0" text="Nome" />
+          <TableColumn fx:id="ussusuariocol" prefWidth="193.0" text="Usuário" />
+          <TableColumn fx:id="ussnomecol" prefWidth="193.0" text="Nome" />
         </columns>
       </TableView>
       <ImageView fitHeight="69.0" fitWidth="86.0" layoutX="14.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">

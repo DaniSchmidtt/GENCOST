@@ -10,6 +10,7 @@ import gencost_cdgi.Interface.Stance.MensagemDeAlertaStance;
 import gencost_cdgi.Interface.Stance.TelaDeCadastroStance;
 import gencost_cdgi.Interface.Stance.TelaDetalhesGrupoStance;
 import gencost_cdgi.Interface.Thread.ThreaDa;
+import gencost_cdgi.Views.HistoricoPagamentotable;
 import gencost_cdgi.Views.Usuario;
 import java.io.IOException;
 import javafx.scene.control.TextField;
@@ -18,6 +19,8 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,6 +28,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  * FXML Controller class
@@ -51,6 +57,30 @@ public class TelaDetalhesGrupoController implements Initializable {
     private Label nomeusr;
     @FXML
     private Label lblnomegrupo;
+
+    @FXML
+    private TableView<HistoricoPagamentotable> HistPagtable;
+
+    @FXML
+    private TableColumn<HistoricoPagamentotable, String> usuariocol;
+
+    @FXML
+    private TableColumn<HistoricoPagamentotable, Double> pagamentocol;
+
+    @FXML
+    private TableColumn<HistoricoPagamentotable, String> contacol;
+
+    @FXML
+    private TableColumn<HistoricoPagamentotable, String> datacol;
+
+    @FXML
+    private TableView Membrotable;
+
+    @FXML
+    private TableColumn ussusuariocol;
+
+    @FXML
+    private TableColumn ussnomecol;
 
     @FXML
     private void handleButtonActionPESQ(ActionEvent event) throws IOException, InterruptedException {
@@ -108,7 +138,7 @@ public class TelaDetalhesGrupoController implements Initializable {
             ctaS = ctaS.getInstance();
             Business usrvalida = new Business();
             ArrayList<String> valida = usrvalida.pesquisaUser(emailusr.getText());
-            usrvalida.AdicionarUsrGrupo(Integer.valueOf(valida.get(0)),ctaS.grupoId );
+            usrvalida.AdicionarUsrGrupo(Integer.valueOf(valida.get(0)), ctaS.grupoId);
             ThreaDa thread = new ThreaDa();
             MensagemDeAlertaStance mensagem = null;
             mensagem = mensagem.getInstance();
@@ -124,6 +154,22 @@ public class TelaDetalhesGrupoController implements Initializable {
         ctaS = ctaS.getInstance();
         lblnomegrupo.setText(ctaS.nomegrupo);
 
+        usuariocol.setCellValueFactory(new PropertyValueFactory<>("usuario"));
+        pagamentocol.setCellValueFactory(new PropertyValueFactory<>("pagamento"));
+        contacol.setCellValueFactory(new PropertyValueFactory<>("conta"));
+        datacol.setCellValueFactory(new PropertyValueFactory<>("data"));
+        
+        HistPagtable.setItems(listaDePagamentos());
+
+    }
+
+    private ObservableList<HistoricoPagamentotable> listaDePagamentos() {
+        return FXCollections.observableArrayList(
+                new HistoricoPagamentotable("Danilo", 22.90, "Carne", "23-11-20"),
+                new HistoricoPagamentotable("Caio", 34.90, "Carne", "20-11-20"),
+                new HistoricoPagamentotable("Clayton", 60.90, "Carne", "29-11-20"),
+                new HistoricoPagamentotable("Vitor",12.90,"Carne","12-11-20")
+        );
     }
 
 }
